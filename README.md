@@ -2,7 +2,7 @@
 
 Cheat files (`.pnach`) for the PCSX2 PlayStation 2 emulator. There's one folder per game, and each file is named `<SERIAL>_<CRC>.pnach` so PCSX2 picks it up automatically. Every cheat has a short description, and its status is shown at the start of the description.
 
-> **Status:** every cheat here is marked **[UNTESTED]**. The addresses were checked against the game's executable, but none of the cheats are confirmed in game yet. Back up your memory card before you try them, and enable them one at a time.
+> **Status:** cheats are verified by running the game in PCSX2 and checking the game's memory while it runs, to confirm each patch is applied and active. Cheats marked **[TESTED]** passed that check (GTA Vice City Stories PAL, Nov 4 2026). Cheats still marked **[UNTESTED]** were only checked against the game's executable. Back up your memory card before you try untested cheats, and enable them one at a time.
 
 ## Installing in PCSX2
 
@@ -24,18 +24,18 @@ Cheat files (`.pnach`) for the PCSX2 PlayStation 2 emulator. There's one folder 
 
 | Cheat | Status | Notes |
 |---|---|---|
-| Infinite Health and Armour | Untested | luc-ita |
-| Infinite Ammo (on foot and in vehicles) | Untested | Azagthoth NTSC, PAL port |
-| Max Money | Untested | Saved to the memory card |
-| Never Wanted | Untested | luc-ita |
-| Infinite Sprint (and swim stamina) | Untested | luc-ita |
-| Infinite Oxygen Underwater | Untested | luc-ita |
-| Never Fall Off Bike | Untested | luc-ita |
+| Infinite Health and Armour | Tested (verified in memory on PCSX2, Nov 4 2026) | luc-ita |
+| Infinite Ammo (on foot and in vehicles) | Tested (verified in memory on PCSX2, Nov 4 2026) | Azagthoth NTSC, PAL port |
+| Max Money | Tested (verified in memory on PCSX2, Nov 4 2026) | Saved to the memory card |
+| Never Wanted | Tested (verified in memory on PCSX2, Nov 4 2026) | luc-ita |
+| Infinite Sprint (and swim stamina) | Tested (verified in memory on PCSX2, Nov 4 2026) | luc-ita |
+| Infinite Oxygen Underwater | Tested (verified in memory on PCSX2, Nov 4 2026) | luc-ita |
+| Never Fall Off Bike | Tested (verified in memory on PCSX2, Nov 4 2026) | luc-ita |
 | Player Car Indestructible (EXPERIMENTAL) | Untested | **May crash**; makes the car very heavy |
 | Always Clear Weather (EXPERIMENTAL) | Untested | **May crash** |
-| Auto Weapon Sets (all three) | Untested | Custom; gives weapon sets 1-3 automatically |
-| Weapon Sets Give 9999 Ammo | Untested | Weapon sets give 9999 rounds per gun |
-| Boomshine Blowout - Heat Never Rises (MISSION-SPECIFIC) | Untested | **Enable only during Boomshine Blowout**, then turn it off |
+| Auto Weapon Sets (all three) | Tested (verified in memory on PCSX2, Nov 4 2026) | Custom; gives weapon sets 1-3 automatically |
+| Weapon Sets Give 9999 Ammo | Tested (verified in memory on PCSX2, Nov 4 2026) | Weapon sets give 9999 rounds per gun |
+| Boomshine Blowout - Heat Never Rises (MISSION-SPECIFIC) | Partly tested: holds heat at 0 in memory during the mission, mission pass not yet confirmed | **Enable only during Boomshine Blowout**, then turn it off |
 
 ### The Godfather (PAL)
 
