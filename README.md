@@ -2,7 +2,7 @@
 
 Cheat files (`.pnach`) for the PCSX2 PlayStation 2 emulator. There's one folder per game, and each file is named `<SERIAL>_<CRC>.pnach` so PCSX2 picks it up automatically. Every cheat has a short description, and its status is shown at the start of the description.
 
-> **Status:** cheats are verified by running the game in PCSX2 and checking the game's memory while it runs, to confirm each patch is applied and active. Cheats marked **[TESTED]** passed that check (GTA Vice City Stories PAL and The Godfather PAL, Nov 4 2026). Cheats still marked **[UNTESTED]** were only checked against the game's executable. Back up your memory card before you try untested cheats, and enable them one at a time.
+> **Status:** cheats are verified by running the game in PCSX2 and checking the game's memory while it runs, to confirm each patch is applied and active. Cheats marked **[TESTED]** passed that check (GTA Vice City Stories PAL, The Godfather PAL and The Godfather NTSC-U, Nov 4 2026). Cheats still marked **[UNTESTED]** were only checked against the game's executable. Back up your memory card before you try untested cheats, and enable them one at a time.
 
 ## Installing in PCSX2
 
@@ -69,14 +69,14 @@ Cheat files (`.pnach`) for the PCSX2 PlayStation 2 emulator. There's one folder 
 
 | Cheat | Status | Notes |
 |---|---|---|
-| Infinite Health (Safe) | Untested | Port of the PAL custom code |
-| Infinite Ammo | Untested | Same as the Codejunkies USA code |
-| No Reloads | Untested | Same as the Codejunkies USA code |
-| Extort Business For 99 Million | Untested | PAL code ported |
-| Mob Vendetta Never Increases | Untested | PAL code ported |
-| Police Bribes Never Wear Off | Untested | PAL code ported |
-| Max Skill Points (Always On) | Untested | Custom |
-| Max All Skill Levels | Untested | Port of Code Master's CodeBreaker codes |
+| Infinite Health (Safe) | Tested (verified in memory on PCSX2, Nov 4 2026) | Port of the PAL custom code |
+| Infinite Ammo | Tested (verified in memory on PCSX2, Nov 4 2026) | Same as the Codejunkies USA code |
+| No Reloads | Tested (verified in memory on PCSX2, Nov 4 2026) | Same as the Codejunkies USA code |
+| Extort Business For 99 Million | Tested (verified in memory on PCSX2, Nov 4 2026) | PAL code ported |
+| Mob Vendetta Never Increases | Tested (verified in memory on PCSX2, Nov 4 2026) | PAL code ported |
+| Police Bribes Never Wear Off | Tested (verified in memory on PCSX2, Nov 4 2026) | PAL code ported |
+| Max Skill Points (Always On) | Tested (verified in memory on PCSX2, Nov 4 2026) | Custom |
+| Max All Skill Levels | Tested (verified in memory on PCSX2, Nov 4 2026) | Port of Code Master's CodeBreaker codes |
 
 ## Credits
 
