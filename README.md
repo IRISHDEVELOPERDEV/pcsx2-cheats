@@ -2,7 +2,7 @@
 
 Cheat files (`.pnach`) for the PCSX2 PlayStation 2 emulator. There's one folder per game, and each file is named `<SERIAL>_<CRC>.pnach` so PCSX2 picks it up automatically. Every cheat has a short description, and its status is shown at the start of the description.
 
-> **Status:** cheats are verified by running the game in PCSX2 and checking the game's memory while it runs, to confirm each patch is applied and active. Cheats marked **[TESTED]** passed that check (GTA Vice City Stories PAL, The Godfather PAL and The Godfather NTSC-U, Nov 4 2026). Cheats still marked **[UNTESTED]** were only checked against the game's executable. Back up your memory card before you try untested cheats, and enable them one at a time.
+> **Status:** cheats are verified by running the game in PCSX2 and checking the game's memory while it runs, to confirm each patch is applied and active. Cheats marked **[TESTED]** passed that check (Nov 4 2026; see the tables below). Cheats still marked **[UNTESTED]** were only checked against the game's executable. Back up your memory card before you try untested cheats, and enable them one at a time.
 
 ## Installing in PCSX2
 
@@ -78,12 +78,102 @@ Cheat files (`.pnach`) for the PCSX2 PlayStation 2 emulator. There's one folder 
 | Max Skill Points (Always On) | Tested (verified in memory on PCSX2, Nov 4 2026) | Custom |
 | Max All Skill Levels | Tested (verified in memory on PCSX2, Nov 4 2026) | Port of Code Master's CodeBreaker codes |
 
+### Grand Theft Auto: San Andreas (PAL)
+
+| Serial | CRC | Region |
+|---|---|---|
+| SLES-52541 | B440A8FE | Europe/Australia v2.01 (En, Fr, De, Es, It) |
+
+| Cheat | Status | Notes |
+|---|---|---|
+| Infinite Health and Armour | Tested (verified in memory on PCSX2, Nov 4 2026) | Custom; HUD hook adapted from a Codejunkies code |
+| Max Money | Tested (verified in memory on PCSX2, Nov 4 2026) | Custom; saved to the memory card |
+| Infinite Ammo | Tested (verified in memory on PCSX2, Nov 4 2026) | Custom; game's own FULLCLIP flag |
+| Never Wanted | Tested (verified in memory on PCSX2, Nov 4 2026) | Custom; game's own AEZAKMI flag |
+| Never Hungry | Tested (verified in memory on PCSX2, Nov 4 2026) | Custom; game's own cheat flag |
+| Max Respect | Tested (verified in memory on PCSX2, Nov 4 2026) | Custom; game's own cheat flag |
+| Max Stamina - Infinite Sprint | Tested (verified in memory on PCSX2, Nov 4 2026) | Custom |
+| Max Vehicle Skills | Tested (verified in memory on PCSX2, Nov 4 2026) | Custom |
+| Max Weapon Skills - Hitman | Tested (verified in memory on PCSX2, Nov 4 2026) | Custom |
+| Auto Weapons - Full Set | Tested (verified in memory on PCSX2, Nov 4 2026) | Custom code cave + hook |
+
+### Scarface: The World Is Yours (PAL)
+
+| Serial | CRC | Region |
+|---|---|---|
+| SLES-54182 | 301A1B6E | Europe (En, Fr, Es, It) |
+
+| Cheat | Status | Notes |
+|---|---|---|
+| Infinite Health | Tested (verified in memory on PCSX2, Nov 4 2026) | Codejunkies |
+| Infinite Ammo | Tested (verified in memory on PCSX2, Nov 4 2026) | Codejunkies |
+| No Car Damage | Untested | Codejunkies |
+| Cop Heat Does Not Increase | Tested (verified in memory on PCSX2, Nov 4 2026) | Codejunkies |
+| Gang Heat Does Not Increase | Tested (verified in memory on PCSX2, Nov 4 2026) | Codejunkies |
+| Max Cash | Tested (verified in memory on PCSX2, Nov 4 2026) | Codejunkies; small code cave + hook, saved to the memory card |
+
+### Bully (NTSC-U)
+
+| Serial | CRC | Region |
+|---|---|---|
+| SLUS-21269 | 28703748 | USA |
+
+| Cheat | Status | Notes |
+|---|---|---|
+| Phoenix Key | Untested | **Master code: leave OFF**; not needed in PCSX2 |
+| Infinite Health | Tested (verified in memory on PCSX2, Nov 4 2026) | Direct write |
+| Infinite Health (Alternate) | Untested | Code cave + hook; don't use with Infinite Health |
+| Max Pocket Change | Tested (verified in memory on PCSX2, Nov 4 2026) | Direct write |
+| Max Pocket Change (Alternate) | Untested | Code cave + hook; don't use with Max Pocket Change |
+| Always Low Trouble Meter | Tested (verified in memory on PCSX2, Nov 4 2026) | |
+| Press L1+L2 / R1+R2 For Low / High Trouble Meter | Untested | Button codes |
+| Press R1+Select / R2+Select For Top / End Of The Hour | Tested (seen working in game on PCSX2, Nov 4 2026) | Button codes |
+| Press L1+Select For (12:00 A.M. to 11:00 P.M.), 24 codes | Untested | Button codes; enable only one |
+| Max / No (Stats screen counters), 454 codes | Untested, except Max Tickets Collected (tested) | Max/No pairs for each stat; never enable both of a pair; saved to the memory card |
+
+### Grand Theft Auto: Vice City (PAL)
+
+| Serial | CRC | Region |
+|---|---|---|
+| SLES-51061 | 26954C46 | Europe v3.00 (not v1.50/v2.03) |
+
+| Cheat | Status | Notes |
+|---|---|---|
+| Infinite Health and Armour | Tested (verified in memory on PCSX2, Nov 4 2026) | Custom code cave; hook site from RyTheHexer |
+| Infinite Ammo (on foot and in vehicles) | Tested (verified in memory on PCSX2, Nov 4 2026) | GameHacking.org PAL list |
+| Max Money | Tested (verified in memory on PCSX2, Nov 4 2026) | Saved to the memory card |
+| Never Wanted | Tested (verified in memory on PCSX2, Nov 4 2026) | GameHacking.org PAL list |
+| Infinite Sprint | Tested (verified in memory on PCSX2, Nov 4 2026) | Game's own flag |
+| Auto Weapon Sets (all three) | Tested (verified in memory on PCSX2, Nov 4 2026) | Custom code cave + hook |
+
+### Manhunt (PAL)
+
+| Serial | CRC | Region |
+|---|---|---|
+| SLES-52023 | FE419424 | Europe v1.03 (En, Fr, De, Es, It) |
+
+| Cheat | Status | Notes |
+|---|---|---|
+| Infinite Health | Untested | Patch applied; takes effect when a level starts, not from a save state |
+| Infinite Stamina (Infinite Run) | Tested (verified in memory on PCSX2, Nov 4 2026) | Codejunkies |
+| Infinite Ammo (No Clip Drain) | Untested | Patch applied; effect not confirmed yet |
+| Infinite Reload | Untested | Patch applied; effect not confirmed yet |
+| Infinite-Max Ammo (99) (EXPERIMENTAL) | Untested | Don't use with the two codes above |
+| Hunters Ignore You (Low AI) (EXPERIMENTAL) | Tested (verified in memory on PCSX2, Nov 4 2026) | Codejunkies |
+| Open All Levels | Tested (verified in memory on PCSX2, Nov 4 2026) | Saved to the memory card |
+| All Levels Max Stars (EXPERIMENTAL) | Tested (verified in memory on PCSX2, Nov 4 2026) | Unlocks bonus features; saved to the memory card |
+| First Person Mode (EXPERIMENTAL) | Untested | Camera did not change in testing |
+
 ## Credits
 
 - **luc-ita**: Vice City Stories PAL codes, [GameHacking.org](https://gamehacking.org/game/110916)
 - **Azagthoth**: Vice City Stories NTSC raw codes (GTAForums topic 442950), ported to PAL
 - **Codejunkies**: The Godfather Action Replay MAX codes (PAL and USA), decrypted with omniconvert, mirrored at [GameHacking.org](https://gamehacking.org/game/101576)
 - **Code Master**: The Godfather NTSC-U CodeBreaker stat codes
+- **Codejunkies**: Scarface: The World Is Yours PAL Action Replay codes (via the European CodeBase)
+- **CheatDevicePS2** (codes) and **xs1l3n7x** (pnach conversion): Bully NTSC-U codes
+- **CMX, luc-ita, RyTheHexer**: GTA Vice City PAL codes, [GameHacking.org](https://gamehacking.org/game/101599)
+- **Codejunkies** (raw PCSX2 form by **GoggleBug**, ps2-home.com): Manhunt PAL codes
 - Custom code-cave cheats and ports by IRISHDEVELOPERDEV
 
 ## What's not included
