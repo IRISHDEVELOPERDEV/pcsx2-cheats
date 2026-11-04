@@ -36,7 +36,7 @@ Cheat files (`.pnach`) for the PCSX2 PlayStation 2 emulator. There's one folder 
 | Always Clear Weather (EXPERIMENTAL) | Untested | **May crash** |
 | Auto Weapon Sets (all three) | Tested (verified in memory on PCSX2, Nov 4 2026) | Custom; gives weapon sets 1-3 automatically |
 | Weapon Sets Give 9999 Ammo | Tested (verified in memory on PCSX2, Nov 4 2026) | Weapon sets give 9999 rounds per gun |
-| Boomshine Blowout - Heat Never Rises (MISSION-SPECIFIC) | Partly tested: holds heat at 0 in memory during the mission, mission pass not yet confirmed | **Enable only during Boomshine Blowout**, then turn it off |
+| Boomshine Blowout - Heat Never Rises (MISSION-SPECIFIC) | Tested (mission passed on PCSX2, Nov 4 2026) | **Enable only during Boomshine Blowout**, then turn it off |
 
 ### The Godfather (PAL)
 

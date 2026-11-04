@@ -144,7 +144,7 @@ patch=1,EE,20281C70,extended,2406270F
 
 [Boomshine Blowout - Heat Never Rises (MISSION-SPECIFIC)]
 author=IRISHDEVELOPERDEV (from SLES-54622 MAIN.SCM / ELF analysis)
-description=[PARTLY TESTED: holds heat at 0 in memory during the mission, mission pass not yet confirmed] [MISSION-SPECIFIC: enable only during Boomshine Blowout, then turn off] Only active while the Boomshine "Heat" bar is on screen. Freezes heat at 0. Disable after the mission.
+description=[TESTED: mission passed on PCSX2, Nov 4 2026] [MISSION-SPECIFIC: enable only during Boomshine Blowout, then turn off] Only active while the Boomshine "Heat" bar is on screen. Freezes heat at 0. Disable after the mission.
 // if counter slot 0 shows ScriptSpace+0x5688 -> write 0.0 to [ScriptSpace]+0x56AC
 patch=1,EE,E0025688,extended,0050AD60
 patch=1,EE,6048771C,extended,00000000
