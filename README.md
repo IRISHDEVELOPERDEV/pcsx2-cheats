@@ -2,7 +2,7 @@
 
 Cheat files (`.pnach`) for the PCSX2 PlayStation 2 emulator. There's one folder per game, and each file is named `<SERIAL>_<CRC>.pnach` so PCSX2 picks it up automatically. Every cheat has a short description, and its status is shown at the start of the description.
 
-> **Status:** cheats are verified by running the game in PCSX2 and checking the game's memory while it runs, to confirm each patch is applied and active. Cheats marked **[TESTED]** passed that check (GTA Vice City Stories PAL, Nov 4 2026). Cheats still marked **[UNTESTED]** were only checked against the game's executable. Back up your memory card before you try untested cheats, and enable them one at a time.
+> **Status:** cheats are verified by running the game in PCSX2 and checking the game's memory while it runs, to confirm each patch is applied and active. Cheats marked **[TESTED]** passed that check (GTA Vice City Stories PAL and The Godfather PAL, Nov 4 2026). Cheats still marked **[UNTESTED]** were only checked against the game's executable. Back up your memory card before you try untested cheats, and enable them one at a time.
 
 ## Installing in PCSX2
 
@@ -13,6 +13,7 @@ Cheat files (`.pnach`) for the PCSX2 PlayStation 2 emulator. There's one folder 
 3. In PCSX2, right-click the game and open **Properties**, then go to **Cheats**.
 4. Tick **Enable Cheats**, then tick each cheat you want. Leave the others off.
 5. Start the game, or restart it if it's already running.
+6. **Tip:** Save states keep patched game code. If you turn a cheat off, load a memory-card save or restart the game; loading an old save state can bring the old cheat back.
 
 ## Games
 
@@ -46,16 +47,16 @@ Cheat files (`.pnach`) for the PCSX2 PlayStation 2 emulator. There's one folder 
 | Cheat | Status | Notes |
 |---|---|---|
 | Infinite Health | Untested | Codejunkies; don't use with the Safe version |
-| Infinite Health (Safe) | Untested | Custom replacement |
-| Infinite Ammo | Untested | Codejunkies |
-| No Reloads | Untested | Codejunkies |
-| Extort Business For 99 Million | Untested | Codejunkies |
-| Mob Vendetta Never Increases | Untested | Codejunkies |
-| Police Bribes Never Wear Off | Untested | Codejunkies |
+| Infinite Health (Safe) | Tested (verified in memory on PCSX2, Nov 4 2026) | Custom replacement |
+| Infinite Ammo | Tested (verified in memory on PCSX2, Nov 4 2026) | Codejunkies |
+| No Reloads | Tested (verified in memory on PCSX2, Nov 4 2026) | Codejunkies |
+| Extort Business For 99 Million | Tested (verified in memory on PCSX2, Nov 4 2026) | Codejunkies |
+| Mob Vendetta Never Increases | Tested (verified in memory on PCSX2, Nov 4 2026) | Codejunkies |
+| Police Bribes Never Wear Off | Tested (verified in memory on PCSX2, Nov 4 2026) | Codejunkies |
 | Max Skill Points (Press L1+L2) | Untested | Codejunkies |
 | All Films Unlocked | Untested | Codejunkies |
-| Max Skill Points (Always On) | Untested | Custom; don't use with the L1+L2 version |
-| Max All Skill Levels | Untested | Port of Code Master's CodeBreaker codes |
+| Max Skill Points (Always On) | Tested (verified in memory on PCSX2, Nov 4 2026) | Custom; don't use with the L1+L2 version |
+| Max All Skill Levels | Tested (verified in memory on PCSX2, Nov 4 2026) | Port of Code Master's CodeBreaker codes |
 | Police Heat Never Increases | Untested | Custom |
 | Police Heat Always Zero | Untested | Old version that may freeze; use the Safe one |
 | Police Heat Always Zero (Safe) | Untested | Custom; don't use with the old version |

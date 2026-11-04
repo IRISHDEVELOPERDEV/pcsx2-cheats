@@ -3,7 +3,7 @@ gametitle=The Godfather (PAL) [SLES-53967] 9C5C1478
 // Sources: Codejunkies UK Action Replay MAX list for The Godfather (PAL), decrypted with omniconvert's AR MAX algorithm
 //   (mirrored at https://gamehacking.org/game/101576); Max All Skill Levels ported from Code Master's NTSC-U CodeBreaker codes;
 //   custom code-cave cheats made for this pack. All patch addresses checked against the PAL ELF SLES_539.67.
-// Status: [UNTESTED] = not yet confirmed in game. Do not enable two cheats that say they replace each other.
+// Status: [TESTED] = verified in game memory on PCSX2 while running (Nov 4 2026). [UNTESTED] = not yet confirmed in game. Do not enable two cheats that say they replace each other.
 
 [Infinite Health]
 author=Codejunkies (AR MAX, decrypted by IRISHDEVELOPERDEV)
@@ -13,7 +13,7 @@ patch=1,EE,20167D88,extended,E4411048
 
 [Infinite Health (Safe)]
 author=IRISHDEVELOPERDEV (custom, built and checked against the PAL ELF SLES_539.67)
-description=[UNTESTED] Replacement for the Codejunkies Infinite Health (do not enable both). Every time the player takes damage, health is set back to full instead of going down, so the game never sees lethal damage and never starts the dying/downed state; knockdowns from explosions play out normally and you get back up. Enemies and NPCs take damage as normal. Scripted instant deaths (e.g. drowning, mission fail kills) are not blocked.
+description=[TESTED] Replacement for the Codejunkies Infinite Health (do not enable both). Every time the player takes damage, health is set back to full instead of going down, so the game never sees lethal damage and never starts the dying/downed state; knockdowns from explosions play out normally and you get back up. Enemies and NPCs take damage as normal. Scripted instant deaths (e.g. drowning, mission fail kills) are not blocked.
 // Hook: 0x00239BE4 in the damage routine (0x00239AA8, health -= damage) was E6201048 swc1 $f0,0x1048($s1); now j 0x000C0200.
 // Cave at 0x000C0200-0x000C023C: player = *(*(*(0x0059A260)+4)) - 0x1340 (same as the game's get-player function 0x00168490).
 // If $s1 == player, $f0 = max health (+0x104C) before the store; otherwise the original store runs unchanged. Then j 0x00239BE8 (v2 fix 2026-10-30: v1 jumped to 0x239BEC and skipped "lw $v1,4($s3)", leaving a garbage pointer that froze the game).
@@ -37,27 +37,27 @@ patch=1,EE,20239BE4,extended,08030080
 
 [Infinite Ammo]
 author=Codejunkies (AR MAX, decrypted by IRISHDEVELOPERDEV)
-description=[UNTESTED] Spare ammo never goes down.
+description=[TESTED] Spare ammo never goes down.
 patch=1,EE,20156C54,extended,00000000
 
 [No Reloads]
 author=Codejunkies (AR MAX "Infinite Ammo/No Reloads", decrypted by IRISHDEVELOPERDEV)
-description=[UNTESTED] The loaded clip never empties, so you never have to reload.
+description=[TESTED] The loaded clip never empties, so you never have to reload.
 patch=1,EE,201582CC,extended,24420000
 
 [Extort Business For 99 Million]
 author=Codejunkies (AR MAX, decrypted by IRISHDEVELOPERDEV)
-description=[UNTESTED] Max money. Verified against the PAL ELF: this patches the game's add-money routine, so the first time you earn (or spend) any money your cash jumps to about $99.9 million, and stays near that from then on.
+description=[TESTED] Max money. Verified against the PAL ELF: this patches the game's add-money routine, so the first time you earn (or spend) any money your cash jumps to about $99.9 million, and stays near that from then on.
 patch=1,EE,2028C3F4,extended,3C0205F5
 
 [Mob Vendetta Never Increases]
 author=Codejunkies (AR MAX, decrypted by IRISHDEVELOPERDEV)
-description=[UNTESTED] Rival families' vendetta level doesn't go up, so no mob wars from your actions.
+description=[TESTED] Rival families' vendetta level doesn't go up, so no mob wars from your actions.
 patch=1,EE,20296FC4,extended,00000000
 
 [Police Bribes Never Wear Off]
 author=Codejunkies (AR MAX, decrypted by IRISHDEVELOPERDEV)
-description=[UNTESTED] Once you bribe the police the bribe never runs down, keeping police heat off. Still cancelled if you commit a serious crime (e.g. killing a cop).
+description=[TESTED] Once you bribe the police the bribe never runs down, keeping police heat off. Still cancelled if you commit a serious crime (e.g. killing a cop).
 patch=1,EE,2029B520,extended,00000000
 
 [Max Skill Points (Press L1+L2)]
@@ -74,7 +74,7 @@ patch=1,EE,21B69190,extended,42C80000
 
 [Max Skill Points (Always On)]
 author=IRISHDEVELOPERDEV (v2 2026-10-31: pointer-safe rewrite, built and checked against the PAL ELF SLES_539.67; v1 was the Codejunkies L1+L2 code with the button check removed)
-description=[UNTESTED] Keeps unspent skill points at 100, no button press. Open Pause > Skills and buy every upgrade; the points refill the next time the game reads them. v2 no longer writes to a fixed memory address: it only tops up the player's own "skill_points" stat, at the moment the game itself looks it up, so nothing is written on the title screen, during loading or before the player's stats exist. Never lowers points above 100. Do not enable together with the L1+L2 version.
+description=[TESTED] Keeps unspent skill points at 100, no button press. Open Pause > Skills and buy every upgrade; the points refill the next time the game reads them. v2 no longer writes to a fixed memory address: it only tops up the player's own "skill_points" stat, at the moment the game itself looks it up, so nothing is written on the title screen, during loading or before the player's stats exist. Never lowers points above 100. Do not enable together with the L1+L2 version.
 // v1 was "patch=1,EE,218085E8,extended,42C80000": 100.0f written every frame to heap address 0x018085E8, which only holds the
 //   skill_points value some of the time (title screen / loading / new-game setup = other data) -> possible freezes / bad saved data.
 // Game facts (PAL ELF): stats live in a sorted table at *(obj+0x28) (count +8, 20-byte entries at +0x20: {hash, flags, float value @+8, ...}).
@@ -112,7 +112,7 @@ patch=1,EE,2028FB90,extended,08030140
 
 [Max All Skill Levels]
 author=IRISHDEVELOPERDEV (ported to PAL from Code Master's NTSC-U CodeBreaker 'Advanced Game Variable' codes; hook address verified in the PAL ELF)
-description=[UNTESTED] Maxes Fighting, Shooting, Health/Toughness, Speed and Street Smarts (level 10) and sets Respect level to 50, automatically, no button press. Works by hooking the game's stat-reading routine (PAL 0x0028FBCC, USA 0x0028FBBC) and returning max values for those six stats; every other stat reads normally.
+description=[TESTED] Maxes Fighting, Shooting, Health/Toughness, Speed and Street Smarts (level 10) and sets Respect level to 50, automatically, no button press. Works by hooking the game's stat-reading routine (PAL 0x0028FBCC, USA 0x0028FBBC) and returning max values for those six stats; every other stat reads normally.
 // Code cave at 0x000C0100 (13 instructions) + override table at 0x000C0180 (6 x {hash, float}).
 // Hashes = lowercase x65599 of the stat name: respect_level, melee_level, shooting_level, defense_level, speed_level (+ Street Smarts hash from the USA list).
 patch=1,EE,200C0100,extended,3C04000C
