@@ -1,0 +1,133 @@
+gametitle=The Godfather (NTSC-U) [SLUS-21385] D850707E
+// PCSX2 cheats for the USA disc (CRC D850707E), ported from the PAL file in this repo.
+// Each patch site was matched against the USA ELF SLUS_213.85 (USA code is the PAL code shifted by -0x10 at every site used).
+// Infinite Ammo and No Reloads match Codejunkies' USA AR MAX codes exactly.
+// Sources: Codejunkies AR MAX (PAL + USA lists), Code Master's NTSC-U CodeBreaker stat codes, custom code-cave cheats.
+// Status: [UNTESTED] = not yet confirmed in game.
+
+[Infinite Health (Safe)]
+author=IRISHDEVELOPERDEV (USA port of the PAL custom code; matched against the USA ELF SLUS_213.85)
+description=[UNTESTED] Every time the player takes damage, health is set back to full instead of going down. Enemies and NPCs take damage as normal. Scripted instant deaths (drowning, mission-fail kills) are not blocked. Do not combine with any other infinite-health code.
+// USA hook: 0x00239BD4 (PAL 0x00239BE4) in the damage routine (USA 0x00239A98, PAL 0x00239AA8): orig E6201048 swc1 $f0,0x1048($s1) -> j 0x000C0200.
+//   Matched: identical +/-64 instructions (lwc1 0x1048 / sub.s / swc1 0x1048 / lw $v1,4($s3)). No branch targets 0x239BD4..0x239BD8.
+// Cave 0x000C0200 unchanged except the return jump: PAL j 0x00239BE8 (0808E6FA) -> USA j 0x00239BD8 (0808E6F6), i.e. back to "lw $v1,4($s3)".
+// Player = *(*(*(0x0059A260)+4)) - 0x1340: same address and offsets as the USA get-player function 0x00168480 (PAL 0x00168490), identical code.
+// Field offsets health +0x1048 / max health +0x104C confirmed in the USA damage routine and the USA routine at 0x00167D6C (PAL 0x00167D7C).
+patch=1,EE,200C0200,extended,3C02005A
+patch=1,EE,200C0204,extended,8C42A260
+patch=1,EE,200C0208,extended,1040000A
+patch=1,EE,200C020C,extended,00000000
+patch=1,EE,200C0210,extended,8C420004
+patch=1,EE,200C0214,extended,10400007
+patch=1,EE,200C0218,extended,00000000
+patch=1,EE,200C021C,extended,8C420000
+patch=1,EE,200C0220,extended,10400004
+patch=1,EE,200C0224,extended,2442ECC0
+patch=1,EE,200C0228,extended,14510002
+patch=1,EE,200C022C,extended,00000000
+patch=1,EE,200C0230,extended,C620104C
+patch=1,EE,200C0234,extended,E6201048
+patch=1,EE,200C0238,extended,0808E6F6
+patch=1,EE,200C023C,extended,00000000
+patch=1,EE,20239BD4,extended,08030080
+
+[Infinite Ammo]
+author=Codejunkies (AR MAX USA, decrypted by IRISHDEVELOPERDEV; matched against the USA ELF)
+description=[UNTESTED] Spare ammo never goes down.
+// USA 0x00156C44 (PAL 0x00156C54): orig 00461023 subu $v0,$v0,$a2 -> nop. Identical surrounding code; the subtract helper's only jal caller is USA 0x0015844C (PAL 0x0015845C).
+// Exactly matches the Codejunkies USA AR MAX 'Infinite Ammo' code (decrypts to 20156C44 00000000).
+patch=1,EE,20156C44,extended,00000000
+
+[No Reloads]
+author=Codejunkies (AR MAX USA 'Never Reload', decrypted by IRISHDEVELOPERDEV; matched against the USA ELF)
+description=[UNTESTED] The loaded clip never empties, so you never have to reload.
+// USA 0x001582BC (PAL 0x001582CC): orig 2442FFFF addiu $v0,$v0,-1 (clip at +0x1E8) -> addiu $v0,$v0,0.
+// Exactly matches the Codejunkies USA AR MAX 'Never Reload' code (decrypts to 201582BC 24420000).
+patch=1,EE,201582BC,extended,24420000
+
+[Extort Business For 99 Million]
+author=Codejunkies (PAL AR MAX code, ported to USA by IRISHDEVELOPERDEV; matched against the USA ELF)
+description=[UNTESTED] Max money: the first time you earn (or spend) any money your cash jumps to about $99.9 million (well below overflow) and stays near that. This is saved with your game.
+// USA 0x0028C3E4 (PAL 0x0028C3F4) in the add-money routine: orig 8E22001C lw $v0,0x1C($s1) -> lui $v0,0x05F5, so new cash = 0x05F50000 + amount.
+//   Matched: identical +/-64 instructions (same cash field +0x1C, same global 0x005994D0). Not in the USA Codejunkies list (their USA 'Infinite Cash-Main Menu' is a different, direct RAM write).
+patch=1,EE,2028C3E4,extended,3C0205F5
+
+[Mob Vendetta Never Increases]
+author=Codejunkies (PAL AR MAX code, ported to USA by IRISHDEVELOPERDEV; matched against the USA ELF)
+description=[UNTESTED] Rival families' vendetta level doesn't go up, so no mob wars from your actions.
+// USA 0x00296FB4 (PAL 0x00296FC4): orig E48C0000 swc1 $f12,0($a0) (vendetta value store; no direct jal callers in either ELF) -> nop. Identical +/-64 instructions.
+patch=1,EE,20296FB4,extended,00000000
+
+[Police Bribes Never Wear Off]
+author=Codejunkies (PAL AR MAX code, ported to USA by IRISHDEVELOPERDEV; matched against the USA ELF)
+description=[UNTESTED] Once you bribe the police the bribe never runs down. Still cancelled if you commit a serious crime (e.g. killing a cop).
+// USA 0x0029B510 (PAL 0x0029B520): orig E460004C swc1 $f0,0x4C($v1) (bribe timer decrement store) -> nop. Identical +/-64 instructions.
+patch=1,EE,2029B510,extended,00000000
+
+[Max Skill Points (Always On)]
+author=IRISHDEVELOPERDEV (USA port of the PAL v2 pointer-safe code; matched against the USA ELF SLUS_213.85)
+description=[UNTESTED] Keeps unspent skill points at 100, no button press. It only tops up the player's own skill_points stat at the moment the game looks it up, so nothing is written on the title screen, during loading or before the player's stats exist. Never lowers points above 100. Do not combine with an L1+L2 skill-points code.
+// Stats: sorted table at *(obj+0x28), 20-byte entries at +0x20 {hash, flags, float value @+8}; skill_points hash 0x48EA4531 (7 immediate refs in both ELFs).
+// Player stats singleton *(0x0059978C): same address in USA (USA constructor 0x0028D0D8 = PAL 0x0028D0E8, GetTotalSkillPoints USA 0x002CC238 = PAL 0x002CC248, identical code).
+// USA hook: stat lookup wrapper 0x0028FB80 (PAL 0x0028FB90). Orig 27BDFFF0 / FFBF0000 at 0x0028FB80/84 -> j 0x000C0500 / nop.
+//   Only jal caller USA 0x0028FBAC (stat-read routine 0x0028FBA0); no branch targets 0x0028FB84..0x0028FB9C.
+// Cave 0x000C0500-0x000C0554 unchanged except: jal 0x0028FB08 (0C0A3EC2) -> USA lookup jal 0x0028FAF8 (0C0A3EBE; same encoding the USA wrapper itself uses).
+//   Uses only $at/$t0-$t2 (dead here); $a1 preserved by the lookup (identical code); returns entry in $v0 like the original.
+patch=1,EE,200C0500,extended,27BDFFF0
+patch=1,EE,200C0504,extended,FFBF0000
+patch=1,EE,200C0508,extended,AFA40008
+patch=1,EE,200C050C,extended,0C0A3EBE
+patch=1,EE,200C0510,extended,00000000
+patch=1,EE,200C0514,extended,1040000D
+patch=1,EE,200C0518,extended,3C0148EA
+patch=1,EE,200C051C,extended,34214531
+patch=1,EE,200C0520,extended,14A1000A
+patch=1,EE,200C0524,extended,8FA80008
+patch=1,EE,200C0528,extended,3C09005A
+patch=1,EE,200C052C,extended,8D29978C
+patch=1,EE,200C0530,extended,15090006
+patch=1,EE,200C0534,extended,3C0942C8
+patch=1,EE,200C0538,extended,8C4A0008
+patch=1,EE,200C053C,extended,0149502A
+patch=1,EE,200C0540,extended,11400002
+patch=1,EE,200C0544,extended,00000000
+patch=1,EE,200C0548,extended,AC490008
+patch=1,EE,200C054C,extended,DFBF0000
+patch=1,EE,200C0550,extended,03E00008
+patch=1,EE,200C0554,extended,27BD0010
+patch=1,EE,2028FB84,extended,00000000
+patch=1,EE,2028FB80,extended,08030140
+
+[Max All Skill Levels]
+author=IRISHDEVELOPERDEV (from Code Master's NTSC-U CodeBreaker 'Advanced Game Variable' codes; hook verified in the USA ELF SLUS_213.85)
+description=[UNTESTED] Maxes Fighting, Shooting, Health/Toughness, Speed and Street Smarts (level 10) and sets Respect level to 50, automatically. The values are written into your real stats, so they are saved with your game.
+// USA hook 0x0028FBBC (= Code Master's USA CodeBreaker hook; PAL 0x0028FBCC): orig C4400008 lwc1 $f0,8($v0) -> j 0x000C0100.
+//   Only reached when the lookup returned an entry (beql $v0,$zero at 0x0028FBB4 skips it); $s0 holds the out pointer (move $s0,$a2 at 0x0028FBB0), so $a0/$a2 are free.
+// Cave 0x000C0100 unchanged except the return: PAL j 0x0028FBD0 (080A3EF4) -> USA j 0x0028FBC0 (080A3EF0), delay slot re-runs lwc1 $f0,8($v0).
+// Table 0x000C0180 (6 x {hash, float}) unchanged: hashes are region-independent (lowercase x65599 of the stat names; Street Smarts hash from the USA list).
+patch=1,EE,200C0100,extended,3C04000C
+patch=1,EE,200C0104,extended,24840180
+patch=1,EE,200C0108,extended,24060000
+patch=1,EE,200C010C,extended,8C810000
+patch=1,EE,200C0110,extended,14250002
+patch=1,EE,200C0114,extended,8C810004
+patch=1,EE,200C0118,extended,AC410008
+patch=1,EE,200C011C,extended,24C60001
+patch=1,EE,200C0120,extended,2CC10006
+patch=1,EE,200C0124,extended,1420FFF9
+patch=1,EE,200C0128,extended,24840008
+patch=1,EE,200C012C,extended,080A3EF0
+patch=1,EE,200C0130,extended,C4400008
+patch=1,EE,200C0180,extended,C96BA6EB // respect_level
+patch=1,EE,200C0184,extended,42480000
+patch=1,EE,200C0188,extended,01F24959 // melee_level (Fighting)
+patch=1,EE,200C018C,extended,41200000
+patch=1,EE,200C0190,extended,57B16748 // shooting_level (Shooting)
+patch=1,EE,200C0194,extended,41200000
+patch=1,EE,200C0198,extended,D5FC1905 // defense_level (Health/Toughness)
+patch=1,EE,200C019C,extended,41200000
+patch=1,EE,200C01A0,extended,6C62528C // speed_level (Speed)
+patch=1,EE,200C01A4,extended,41200000
+patch=1,EE,200C01A8,extended,D878E3E4 // Street Smarts level
+patch=1,EE,200C01AC,extended,41200000
+patch=1,EE,2028FBBC,extended,08030040 // hook: was C4400008 lwc1 $f0,8($v0)

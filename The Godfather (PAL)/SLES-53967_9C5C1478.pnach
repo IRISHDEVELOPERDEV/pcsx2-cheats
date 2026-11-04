@@ -1,0 +1,270 @@
+gametitle=The Godfather (PAL) [SLES-53967] 9C5C1478
+// PCSX2 cheats for the European PAL disc (CRC 9C5C1478).
+// Sources: Codejunkies UK Action Replay MAX list for The Godfather (PAL), decrypted with omniconvert's AR MAX algorithm
+//   (mirrored at https://gamehacking.org/game/101576); Max All Skill Levels ported from Code Master's NTSC-U CodeBreaker codes;
+//   custom code-cave cheats made for this pack. All patch addresses checked against the PAL ELF SLES_539.67.
+// Status: [UNTESTED] = not yet confirmed in game. Do not enable two cheats that say they replace each other.
+
+[Infinite Health]
+author=Codejunkies (AR MAX, decrypted by IRISHDEVELOPERDEV)
+description=[UNTESTED] (do not combine with Infinite Health (Safe)) Health never goes down. Verified against the PAL ELF: the patched routine only touches the player object (fetched via the game's get-player function), so enemies are NOT affected. It refills the player's health from max health each time the death check runs.
+patch=1,EE,20167D7C,extended,C441104C
+patch=1,EE,20167D88,extended,E4411048
+
+[Infinite Health (Safe)]
+author=IRISHDEVELOPERDEV (custom, built and checked against the PAL ELF SLES_539.67)
+description=[UNTESTED] Replacement for the Codejunkies Infinite Health (do not enable both). Every time the player takes damage, health is set back to full instead of going down, so the game never sees lethal damage and never starts the dying/downed state; knockdowns from explosions play out normally and you get back up. Enemies and NPCs take damage as normal. Scripted instant deaths (e.g. drowning, mission fail kills) are not blocked.
+// Hook: 0x00239BE4 in the damage routine (0x00239AA8, health -= damage) was E6201048 swc1 $f0,0x1048($s1); now j 0x000C0200.
+// Cave at 0x000C0200-0x000C023C: player = *(*(*(0x0059A260)+4)) - 0x1340 (same as the game's get-player function 0x00168490).
+// If $s1 == player, $f0 = max health (+0x104C) before the store; otherwise the original store runs unchanged. Then j 0x00239BE8 (v2 fix 2026-10-30: v1 jumped to 0x239BEC and skipped "lw $v1,4($s3)", leaving a garbage pointer that froze the game).
+patch=1,EE,200C0200,extended,3C02005A
+patch=1,EE,200C0204,extended,8C42A260
+patch=1,EE,200C0208,extended,1040000A
+patch=1,EE,200C020C,extended,00000000
+patch=1,EE,200C0210,extended,8C420004
+patch=1,EE,200C0214,extended,10400007
+patch=1,EE,200C0218,extended,00000000
+patch=1,EE,200C021C,extended,8C420000
+patch=1,EE,200C0220,extended,10400004
+patch=1,EE,200C0224,extended,2442ECC0
+patch=1,EE,200C0228,extended,14510002
+patch=1,EE,200C022C,extended,00000000
+patch=1,EE,200C0230,extended,C620104C
+patch=1,EE,200C0234,extended,E6201048
+patch=1,EE,200C0238,extended,0808E6FA
+patch=1,EE,200C023C,extended,00000000
+patch=1,EE,20239BE4,extended,08030080
+
+[Infinite Ammo]
+author=Codejunkies (AR MAX, decrypted by IRISHDEVELOPERDEV)
+description=[UNTESTED] Spare ammo never goes down.
+patch=1,EE,20156C54,extended,00000000
+
+[No Reloads]
+author=Codejunkies (AR MAX "Infinite Ammo/No Reloads", decrypted by IRISHDEVELOPERDEV)
+description=[UNTESTED] The loaded clip never empties, so you never have to reload.
+patch=1,EE,201582CC,extended,24420000
+
+[Extort Business For 99 Million]
+author=Codejunkies (AR MAX, decrypted by IRISHDEVELOPERDEV)
+description=[UNTESTED] Max money. Verified against the PAL ELF: this patches the game's add-money routine, so the first time you earn (or spend) any money your cash jumps to about $99.9 million, and stays near that from then on.
+patch=1,EE,2028C3F4,extended,3C0205F5
+
+[Mob Vendetta Never Increases]
+author=Codejunkies (AR MAX, decrypted by IRISHDEVELOPERDEV)
+description=[UNTESTED] Rival families' vendetta level doesn't go up, so no mob wars from your actions.
+patch=1,EE,20296FC4,extended,00000000
+
+[Police Bribes Never Wear Off]
+author=Codejunkies (AR MAX, decrypted by IRISHDEVELOPERDEV)
+description=[UNTESTED] Once you bribe the police the bribe never runs down, keeping police heat off. Still cancelled if you commit a serious crime (e.g. killing a cop).
+patch=1,EE,2029B520,extended,00000000
+
+[Max Skill Points (Press L1+L2)]
+author=Codejunkies (AR MAX, decrypted by IRISHDEVELOPERDEV)
+description=[UNTESTED] (do not combine with the Always On version) Hold L1+L2 to set skill points to 100 so you can upgrade all skills. Only fires while L1+L2 are held.
+patch=1,EE,E001FAFF,extended,00665C02
+patch=1,EE,218085E8,extended,42C80000
+
+[All Films Unlocked]
+author=Codejunkies (AR MAX, decrypted by IRISHDEVELOPERDEV)
+description=[UNTESTED] Unlocks all film clips in the Film Archive. Cosmetic only.
+patch=1,EE,21B6908C,extended,42C80000
+patch=1,EE,21B69190,extended,42C80000
+
+[Max Skill Points (Always On)]
+author=IRISHDEVELOPERDEV (v2 2026-10-31: pointer-safe rewrite, built and checked against the PAL ELF SLES_539.67; v1 was the Codejunkies L1+L2 code with the button check removed)
+description=[UNTESTED] Keeps unspent skill points at 100, no button press. Open Pause > Skills and buy every upgrade; the points refill the next time the game reads them. v2 no longer writes to a fixed memory address: it only tops up the player's own "skill_points" stat, at the moment the game itself looks it up, so nothing is written on the title screen, during loading or before the player's stats exist. Never lowers points above 100. Do not enable together with the L1+L2 version.
+// v1 was "patch=1,EE,218085E8,extended,42C80000": 100.0f written every frame to heap address 0x018085E8, which only holds the
+//   skill_points value some of the time (title screen / loading / new-game setup = other data) -> possible freezes / bad saved data.
+// Game facts (PAL ELF): stats live in a sorted table at *(obj+0x28) (count +8, 20-byte entries at +0x20: {hash, flags, float value @+8, ...}).
+//   Skill points = stat hash 0x48EA4531 (lowercase x65599 of "skill_points"). The player's stats object is the singleton *(0x0059978C)
+//   (set in its constructor 0x0028D0E8, zeroed in its destructor; the HUD, GetTotalSkillPoints 0x002CC248 and the upgrade code use it).
+// Hook: 0x0028FB90 = stat lookup wrapper (only caller: stat-read routine 0x0028FBB0, before the Max All Skill Levels hook at 0x0028FBCC).
+//   Was 27BDFFF0 addiu $sp,-0x10 / FFBF0000 sd $ra,0($sp); now j 0x000C0500 / nop (no branches target 0x0028FB94..0x0028FBAC).
+// Cave 0x000C0500-0x000C0554 re-does the wrapper: own 0x10 stack frame, saves $ra and obj ($a0), calls the game's lookup 0x0028FB08.
+//   Then only if entry != 0 AND hash ($a1, preserved by the lookup) == 0x48EA4531 AND obj == *(0x0059978C) AND value < 100.0f:
+//   entry+8 = 100.0f (0x42C80000). Returns entry in $v0 exactly like the original; only $at/$t0-$t2 used (caller-saved, dead here).
+patch=1,EE,200C0500,extended,27BDFFF0
+patch=1,EE,200C0504,extended,FFBF0000
+patch=1,EE,200C0508,extended,AFA40008
+patch=1,EE,200C050C,extended,0C0A3EC2
+patch=1,EE,200C0510,extended,00000000
+patch=1,EE,200C0514,extended,1040000D
+patch=1,EE,200C0518,extended,3C0148EA
+patch=1,EE,200C051C,extended,34214531
+patch=1,EE,200C0520,extended,14A1000A
+patch=1,EE,200C0524,extended,8FA80008
+patch=1,EE,200C0528,extended,3C09005A
+patch=1,EE,200C052C,extended,8D29978C
+patch=1,EE,200C0530,extended,15090006
+patch=1,EE,200C0534,extended,3C0942C8
+patch=1,EE,200C0538,extended,8C4A0008
+patch=1,EE,200C053C,extended,0149502A
+patch=1,EE,200C0540,extended,11400002
+patch=1,EE,200C0544,extended,00000000
+patch=1,EE,200C0548,extended,AC490008
+patch=1,EE,200C054C,extended,DFBF0000
+patch=1,EE,200C0550,extended,03E00008
+patch=1,EE,200C0554,extended,27BD0010
+patch=1,EE,2028FB94,extended,00000000
+patch=1,EE,2028FB90,extended,08030140
+
+[Max All Skill Levels]
+author=IRISHDEVELOPERDEV (ported to PAL from Code Master's NTSC-U CodeBreaker 'Advanced Game Variable' codes; hook address verified in the PAL ELF)
+description=[UNTESTED] Maxes Fighting, Shooting, Health/Toughness, Speed and Street Smarts (level 10) and sets Respect level to 50, automatically, no button press. Works by hooking the game's stat-reading routine (PAL 0x0028FBCC, USA 0x0028FBBC) and returning max values for those six stats; every other stat reads normally.
+// Code cave at 0x000C0100 (13 instructions) + override table at 0x000C0180 (6 x {hash, float}).
+// Hashes = lowercase x65599 of the stat name: respect_level, melee_level, shooting_level, defense_level, speed_level (+ Street Smarts hash from the USA list).
+patch=1,EE,200C0100,extended,3C04000C
+patch=1,EE,200C0104,extended,24840180
+patch=1,EE,200C0108,extended,24060000
+patch=1,EE,200C010C,extended,8C810000
+patch=1,EE,200C0110,extended,14250002
+patch=1,EE,200C0114,extended,8C810004
+patch=1,EE,200C0118,extended,AC410008
+patch=1,EE,200C011C,extended,24C60001
+patch=1,EE,200C0120,extended,2CC10006
+patch=1,EE,200C0124,extended,1420FFF9
+patch=1,EE,200C0128,extended,24840008
+patch=1,EE,200C012C,extended,080A3EF4
+patch=1,EE,200C0130,extended,C4400008
+patch=1,EE,200C0180,extended,C96BA6EB // respect_level
+patch=1,EE,200C0184,extended,42480000
+patch=1,EE,200C0188,extended,01F24959 // melee_level (Fighting)
+patch=1,EE,200C018C,extended,41200000
+patch=1,EE,200C0190,extended,57B16748 // shooting_level (Shooting)
+patch=1,EE,200C0194,extended,41200000
+patch=1,EE,200C0198,extended,D5FC1905 // defense_level (Health/Toughness)
+patch=1,EE,200C019C,extended,41200000
+patch=1,EE,200C01A0,extended,6C62528C // speed_level (Speed)
+patch=1,EE,200C01A4,extended,41200000
+patch=1,EE,200C01A8,extended,D878E3E4 // Street Smarts level
+patch=1,EE,200C01AC,extended,41200000
+patch=1,EE,2028FBCC,extended,08030040 // hook: was C4400008 lwc1 $f0,8($v0)
+
+[Police Heat Never Increases]
+author=IRISHDEVELOPERDEV (custom, built and checked against the PAL ELF SLES_539.67; no Codejunkies/CodeBreaker heat code exists for this game)
+description=[UNTESTED] Police heat (the "Crimewatch" meter) can never go up in any neighbourhood, so crimes don't raise your wanted level and cops don't come after you for it. Heat can still go DOWN normally (cooling off, bribes), so any heat you already have will fade or can be bribed away.
+// The game's single SetHeat routine (0x0029C460) is used by both AddHeat (0x0029C8C8) and SetHeatLevel (0x0029C7F8).
+// It computes delta = new - current and returns early if delta == 0 (c.eq.s $f20,$f0 at 0x0029C528, then bc1t to the exit).
+// Patched to c.le.s $f0,$f20 so it also returns early whenever delta > 0: increases are dropped, decreases still apply.
+patch=1,EE,2029C528,extended,46140036
+
+[Police Heat Always Zero]
+author=IRISHDEVELOPERDEV (custom, built and checked against the PAL ELF SLES_539.67)
+description=[UNTESTED] [OLD VERSION - possible freeze, use the (Safe) version instead] Wipes police heat to zero in every neighbourhood, every frame, including heat already in your save. Uses the game's own heat-setting routine, so the heat stars/HUD update and the game is told the heat level dropped. Best used together with "Police Heat Never Increases" (keeps it from flickering up between frames).
+// Hook: 0x0029C130 = Crimewatch manager message handler (only reached via its vtable slot at 0x005AACCC; no branches into 0x0029C130/34).
+//   Original first instruction 27BDFF90 (addiu $sp,$sp,-0x70) is replaced by j 0x000C0300 and re-executed at the end of the cave.
+// Cave 0x000C0300-0x000C03C8: saves $ra,$s0-$s2,$a0-$a3 (sq, 128-bit) on its own stack frame; only acts when the message is the
+//   per-frame update message (*(a1) == *(0x006125F8), same check the game uses, dt 1/60) and this == Crimewatch manager (*(0x0059A25C)).
+//   For each of the 11 neighbourhood entries (mgr+0x28+i*0x54, heat float at +0x1C) with heat > 0 it calls
+//   SetHeat(mgr, i, 0.0f, a2=0 (show HUD change), a3=0 (no rounding), t0=0) at 0x0029C460, then restores registers and resumes.
+patch=1,EE,200C0300,extended,27BDFF80
+patch=1,EE,200C0304,extended,FFBF0000
+patch=1,EE,200C0308,extended,7FB00010
+patch=1,EE,200C030C,extended,7FB10020
+patch=1,EE,200C0310,extended,7FB20030
+patch=1,EE,200C0314,extended,7FA40040
+patch=1,EE,200C0318,extended,7FA50050
+patch=1,EE,200C031C,extended,7FA60060
+patch=1,EE,200C0320,extended,7FA70070
+patch=1,EE,200C0324,extended,3C020061
+patch=1,EE,200C0328,extended,8C4325F8
+patch=1,EE,200C032C,extended,8CA20000
+patch=1,EE,200C0330,extended,1443001B
+patch=1,EE,200C0334,extended,00000000
+patch=1,EE,200C0338,extended,3C02005A
+patch=1,EE,200C033C,extended,8C50A25C
+patch=1,EE,200C0340,extended,16040017
+patch=1,EE,200C0344,extended,00000000
+patch=1,EE,200C0348,extended,12000015
+patch=1,EE,200C034C,extended,00000000
+patch=1,EE,200C0350,extended,0000882D
+patch=1,EE,200C0354,extended,26120028
+patch=1,EE,200C0358,extended,C640001C
+patch=1,EE,200C035C,extended,44800800
+patch=1,EE,200C0360,extended,00000000
+patch=1,EE,200C0364,extended,46000834
+patch=1,EE,200C0368,extended,00000000
+patch=1,EE,200C036C,extended,45000008
+patch=1,EE,200C0370,extended,00000000
+patch=1,EE,200C0374,extended,0200202D
+patch=1,EE,200C0378,extended,0220282D
+patch=1,EE,200C037C,extended,44806000
+patch=1,EE,200C0380,extended,0000302D
+patch=1,EE,200C0384,extended,0000382D
+patch=1,EE,200C0388,extended,0C0A7118
+patch=1,EE,200C038C,extended,0000402D
+patch=1,EE,200C0390,extended,26310001
+patch=1,EE,200C0394,extended,2E22000B
+patch=1,EE,200C0398,extended,1440FFEF
+patch=1,EE,200C039C,extended,26520054
+patch=1,EE,200C03A0,extended,DFBF0000
+patch=1,EE,200C03A4,extended,7BB00010
+patch=1,EE,200C03A8,extended,7BB10020
+patch=1,EE,200C03AC,extended,7BB20030
+patch=1,EE,200C03B0,extended,7BA40040
+patch=1,EE,200C03B4,extended,7BA50050
+patch=1,EE,200C03B8,extended,7BA60060
+patch=1,EE,200C03BC,extended,7BA70070
+patch=1,EE,200C03C0,extended,27BD0080
+patch=1,EE,200C03C4,extended,080A704D
+patch=1,EE,200C03C8,extended,27BDFF90
+patch=1,EE,2029C130,extended,080300C0
+
+[Police Heat Always Zero (Safe)]
+author=IRISHDEVELOPERDEV (custom, v2 of Police Heat Always Zero, checked against the PAL ELF SLES_539.67)
+description=[UNTESTED] Keeps police heat at zero in every neighbourhood by writing 0 straight into each neighbourhood's heat value every frame, without calling the game's heat routine. The first version called that routine every frame, which can fire police events mid-update and was the likely cause of a freeze (stale memory read). Do not enable together with the old "Police Heat Always Zero" (same hook).
+// Same hook as v1 (0x0029C130, j 0x000C0400); cave moved to 0x000C0400-0x000C04C8. Calls replaced by sw $zero,0x1C($s2).
+patch=1,EE,200C0400,extended,27BDFF80
+patch=1,EE,200C0404,extended,FFBF0000
+patch=1,EE,200C0408,extended,7FB00010
+patch=1,EE,200C040C,extended,7FB10020
+patch=1,EE,200C0410,extended,7FB20030
+patch=1,EE,200C0414,extended,7FA40040
+patch=1,EE,200C0418,extended,7FA50050
+patch=1,EE,200C041C,extended,7FA60060
+patch=1,EE,200C0420,extended,7FA70070
+patch=1,EE,200C0424,extended,3C020061
+patch=1,EE,200C0428,extended,8C4325F8
+patch=1,EE,200C042C,extended,8CA20000
+patch=1,EE,200C0430,extended,1443001B
+patch=1,EE,200C0434,extended,00000000
+patch=1,EE,200C0438,extended,3C02005A
+patch=1,EE,200C043C,extended,8C50A25C
+patch=1,EE,200C0440,extended,16040017
+patch=1,EE,200C0444,extended,00000000
+patch=1,EE,200C0448,extended,12000015
+patch=1,EE,200C044C,extended,00000000
+patch=1,EE,200C0450,extended,0000882D
+patch=1,EE,200C0454,extended,26120028
+patch=1,EE,200C0458,extended,C640001C
+patch=1,EE,200C045C,extended,44800800
+patch=1,EE,200C0460,extended,00000000
+patch=1,EE,200C0464,extended,46000834
+patch=1,EE,200C0468,extended,00000000
+patch=1,EE,200C046C,extended,45000008
+patch=1,EE,200C0470,extended,00000000
+patch=1,EE,200C0474,extended,AE40001C
+patch=1,EE,200C0478,extended,00000000
+patch=1,EE,200C047C,extended,00000000
+patch=1,EE,200C0480,extended,00000000
+patch=1,EE,200C0484,extended,00000000
+patch=1,EE,200C0488,extended,00000000
+patch=1,EE,200C048C,extended,00000000
+patch=1,EE,200C0490,extended,26310001
+patch=1,EE,200C0494,extended,2E22000B
+patch=1,EE,200C0498,extended,1440FFEF
+patch=1,EE,200C049C,extended,26520054
+patch=1,EE,200C04A0,extended,DFBF0000
+patch=1,EE,200C04A4,extended,7BB00010
+patch=1,EE,200C04A8,extended,7BB10020
+patch=1,EE,200C04AC,extended,7BB20030
+patch=1,EE,200C04B0,extended,7BA40040
+patch=1,EE,200C04B4,extended,7BA50050
+patch=1,EE,200C04B8,extended,7BA60060
+patch=1,EE,200C04BC,extended,7BA70070
+patch=1,EE,200C04C0,extended,27BD0080
+patch=1,EE,200C04C4,extended,080A704D
+patch=1,EE,200C04C8,extended,27BDFF90
+patch=1,EE,2029C130,extended,08030100

@@ -1,0 +1,159 @@
+gametitle=Grand Theft Auto: Vice City Stories (PAL, En/Fr/De/Es/It) [SLES-54622] B3AD1EA4
+// PCSX2 cheats for the European/Australian disc only (CRC B3AD1EA4).
+// Sources: GameHacking.org PAL list by luc-ita (https://gamehacking.org/game/110916);
+// Infinite Ammo, Max Money and 9999-ammo idea ported from NTSC raw codes by Azagthoth (GTAForums topic 442950);
+// custom code-cave cheats made for this pack. All addresses checked against the PAL ELF SLES_546.22.
+// Status: [UNTESTED] = not yet confirmed in game. Enable one cheat at a time when trying them.
+
+[Infinite Health and Armour]
+author=luc-ita (GameHacking.org, PAL)
+description=[UNTESTED] Refills player health and armour to 500 every frame (HUD routine). Code patch.
+patch=1,EE,2031E650,extended,3C0143FA
+patch=1,EE,2031E660,extended,E44104E4
+patch=1,EE,2031E664,extended,E44104E8
+patch=1,EE,2031E66C,extended,00000000
+
+[Infinite Ammo (on foot and in vehicles)]
+author=Azagthoth (NTSC), ported to PAL (+0x1D8)
+description=[UNTESTED] Ammo and clip never go down. Code patch: addiu v0,v0,-1 -> addiu v0,v0,0.
+patch=1,EE,202C1A64,extended,24420000
+patch=1,EE,202C1AC8,extended,24420000
+patch=1,EE,202C1E6C,extended,24420000
+patch=1,EE,202C1ED4,extended,24420000
+
+[Max Money]
+author=Azagthoth (NTSC), ported to PAL (+0x300)
+description=[UNTESTED] Sets cash and displayed cash to $99,999,999. Static player-info address; is saved to the memory card.
+patch=1,EE,204E4CCC,extended,05F5E0FF
+patch=1,EE,204E4CD0,extended,05F5E0FF
+
+[Never Wanted]
+author=luc-ita (GameHacking.org, PAL)
+description=[UNTESTED] Wanted level always stays at zero. Code patch.
+patch=1,EE,203AAB10,extended,10000052
+
+[Infinite Sprint (and swim stamina)]
+author=luc-ita (GameHacking.org, PAL)
+description=[UNTESTED] Running/swimming never tires. Code patch.
+patch=1,EE,20232C1C,extended,1000000E
+
+[Infinite Oxygen Underwater]
+author=luc-ita (GameHacking.org, PAL)
+description=[UNTESTED] Breath meter never drains while swimming. Code patch.
+patch=1,EE,201F3144,extended,00000000
+
+[Never Fall Off Bike]
+author=luc-ita (GameHacking.org, PAL)
+description=[UNTESTED] You are not thrown off motorbikes/bicycles. Code patch.
+patch=1,EE,20336D60,extended,10000006
+patch=1,EE,201DB864,extended,10000021
+
+[Player Car Indestructible (EXPERIMENTAL)]
+author=luc-ita (GameHacking.org, PAL) - author says "read notes"
+description=[UNTESTED] [EXPERIMENTAL - may crash] Car you drive gets 90000 health; also writes 90000 to two physics fields (+0xD0/+0xD4, probably mass), so it will feel very heavy. Skips part of the damage routine. Test on its own.
+patch=1,EE,20137884,extended,3C0347AF
+patch=1,EE,20137888,extended,3463C800
+patch=1,EE,2013788C,extended,AE43027C
+patch=1,EE,20137890,extended,AE4300D0
+patch=1,EE,20137894,extended,AE4300D4
+patch=1,EE,20137898,extended,1000002F
+
+[Always Clear Weather (EXPERIMENTAL)]
+author=luc-ita (GameHacking.org, PAL)
+description=[UNTESTED] [EXPERIMENTAL - may crash] Forces clear weather.
+patch=1,EE,104CD908,extended,00000000
+patch=1,EE,203E3AB4,extended,00000000
+
+[Auto Weapon Sets (all three)]
+author=IRISHDEVELOPERDEV (PAL SLES-54622), uses the game's own weapon-set cheat routines
+description=[UNTESTED] About 5 s after you are in control (and again after death/arrest/weapons removed), runs built-in Weapon Sets 1, 2, 3 once if your heavy-weapon slot is empty. Code cave 0x000C3000-0x000C30BF, counter at 0x000C3100; hook at 0x003BAD8C (DoCheats call in game loop).
+patch=1,EE,200C3000,extended,27BDFFE0
+patch=1,EE,200C3004,extended,FFBF0000
+patch=1,EE,200C3008,extended,FFB00008
+patch=1,EE,200C300C,extended,FFB10010
+patch=1,EE,200C3010,extended,3C10000C
+patch=1,EE,200C3014,extended,0C09296E
+patch=1,EE,200C3018,extended,00000000
+patch=1,EE,200C301C,extended,10400022
+patch=1,EE,200C3020,extended,0040882D
+patch=1,EE,200C3024,extended,8E083100
+patch=1,EE,200C3028,extended,25080001
+patch=1,EE,200C302C,extended,2D090080
+patch=1,EE,200C3030,extended,1520001E
+patch=1,EE,200C3034,extended,AE083100
+patch=1,EE,200C3038,extended,AE003100
+patch=1,EE,200C303C,extended,3C0A0049
+patch=1,EE,200C3040,extended,8D4AFB20
+patch=1,EE,200C3044,extended,11400019
+patch=1,EE,200C3048,extended,00000000
+patch=1,EE,200C304C,extended,8D4A001C
+patch=1,EE,200C3050,extended,15400016
+patch=1,EE,200C3054,extended,00000000
+patch=1,EE,200C3058,extended,0220202D
+patch=1,EE,200C305C,extended,0C08004C
+patch=1,EE,200C3060,extended,24050023
+patch=1,EE,200C3064,extended,2C49000D
+patch=1,EE,200C3068,extended,11200010
+patch=1,EE,200C306C,extended,00026140
+patch=1,EE,200C3070,extended,00026880
+patch=1,EE,200C3074,extended,018D6023
+patch=1,EE,200C3078,extended,01916021
+patch=1,EE,200C307C,extended,8D8C0578
+patch=1,EE,200C3080,extended,1580000A
+patch=1,EE,200C3084,extended,00000000
+patch=1,EE,200C3088,extended,0C0A0562
+patch=1,EE,200C308C,extended,00000000
+patch=1,EE,200C3090,extended,0C0A0606
+patch=1,EE,200C3094,extended,00000000
+patch=1,EE,200C3098,extended,0C0A06A2
+patch=1,EE,200C309C,extended,00000000
+patch=1,EE,200C30A0,extended,10000002
+patch=1,EE,200C30A4,extended,00000000
+patch=1,EE,200C30A8,extended,AE003100
+patch=1,EE,200C30AC,extended,DFBF0000
+patch=1,EE,200C30B0,extended,DFB00008
+patch=1,EE,200C30B4,extended,DFB10010
+patch=1,EE,200C30B8,extended,080A1492
+patch=1,EE,200C30BC,extended,27BD0020
+patch=1,EE,203BAD8C,extended,0C030C00
+
+[Weapon Sets Give 9999 Ammo]
+author=Azagthoth (NTSC idea), PAL port verified against disc
+description=[UNTESTED] Each built-in weapon set (button combo or Auto Weapon Sets) hands out 9999 rounds per gun instead of 5-500. Game caps totals at 99999.
+patch=1,EE,202816E8,extended,2406270F
+patch=1,EE,20281704,extended,2406270F
+patch=1,EE,20281720,extended,2406270F
+patch=1,EE,2028173C,extended,2406270F
+patch=1,EE,20281758,extended,2406270F
+patch=1,EE,20281774,extended,2406270F
+patch=1,EE,2028178C,extended,2406270F
+patch=1,EE,2028195C,extended,2406270F
+patch=1,EE,20281978,extended,2406270F
+patch=1,EE,20281994,extended,2406270F
+patch=1,EE,202819B0,extended,2406270F
+patch=1,EE,202819CC,extended,2406270F
+patch=1,EE,202819E8,extended,2406270F
+patch=1,EE,20281A00,extended,2406270F
+patch=1,EE,20281BCC,extended,2406270F
+patch=1,EE,20281BE8,extended,2406270F
+patch=1,EE,20281C04,extended,2406270F
+patch=1,EE,20281C20,extended,2406270F
+patch=1,EE,20281C3C,extended,2406270F
+patch=1,EE,20281C58,extended,2406270F
+patch=1,EE,20281C70,extended,2406270F
+
+[Boomshine Blowout - Heat Never Rises (MISSION-SPECIFIC)]
+author=IRISHDEVELOPERDEV (from SLES-54622 MAIN.SCM / ELF analysis)
+description=[UNTESTED] [MISSION-SPECIFIC: enable only during Boomshine Blowout, then turn off] Only active while the Boomshine "Heat" bar is on screen. Freezes heat at 0. Disable after the mission.
+// if counter slot 0 shows ScriptSpace+0x5688 -> write 0.0 to [ScriptSpace]+0x56AC
+patch=1,EE,E0025688,extended,0050AD60
+patch=1,EE,6048771C,extended,00000000
+patch=1,EE,00020001,extended,000056AC
+// same check for counter slot 1
+patch=1,EE,E0025688,extended,0050ADBC
+patch=1,EE,6048771C,extended,00000000
+patch=1,EE,00020001,extended,000056AC
+// same check for counter slot 2
+patch=1,EE,E0025688,extended,0050AE18
+patch=1,EE,6048771C,extended,00000000
+patch=1,EE,00020001,extended,000056AC
