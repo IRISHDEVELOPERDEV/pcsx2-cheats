@@ -1,0 +1,105 @@
+gametitle=Grand Theft Auto: San Andreas (PAL v2.01, En/Fr/De/Es/It) [SLES-52541] B440A8FE
+// PCSX2 cheats for the European/Australian v2.01 disc only (CRC B440A8FE).
+// Mostly custom codes that switch on the game's own cheat flags or write its stat/money fields; addresses checked against the v2.01 ELF.
+// The Infinite Health and Armour HUD hook is adapted from a Codejunkies v1 code.
+// Status: [UNTESTED] = not yet confirmed in game. Enable one cheat at a time when trying them.
+
+[Infinite Health and Armour]
+author=IRISHDEVELOPERDEV (custom, addresses checked against the v2.01 ELF; HUD hook adapted from Codejunkies v1 code)
+description=[TESTED] Keeps CJ at 100 health and 100 armour (refilled by the HUD every frame) and turns on the game's own BAGUVIX bullet-proof flag. Player only.
+patch=1,EE,0088E3BD,extended,00000001
+patch=1,EE,202A9CD8,extended,3C0142C8
+patch=1,EE,202A9CDC,extended,AC610588
+patch=1,EE,202A9CE0,extended,AC610580
+patch=1,EE,202A9CE4,extended,24030064
+patch=1,EE,202A9D30,extended,3C0142C8
+patch=1,EE,202A9D34,extended,AC610588
+patch=1,EE,202A9D38,extended,AC610580
+patch=1,EE,202A9D3C,extended,24030064
+
+[Max Money]
+author=IRISHDEVELOPERDEV (custom, CPlayerInfo money field found from the game's own money cheat)
+description=[TESTED] Money stays at $99,999,999. Writes the money value directly, so it is saved to the memory card.
+patch=1,EE,2070A344,extended,05F5E0FF
+patch=1,EE,2070A348,extended,05F5E0FF
+
+[Infinite Ammo]
+author=IRISHDEVELOPERDEV (custom, game's own FULLCLIP cheat flag)
+description=[TESTED] Infinite ammo, no reloading.
+patch=1,EE,0088E3C8,extended,00000001
+
+[Never Wanted]
+author=IRISHDEVELOPERDEV (custom, game's own AEZAKMI cheat flag)
+description=[TESTED] Wanted level can't change, so you never get stars.
+patch=1,EE,0088E3C1,extended,00000001
+
+[Never Hungry]
+author=IRISHDEVELOPERDEV (custom, game's own never-hungry cheat flag)
+description=[TESTED] CJ never gets hungry or loses weight/muscle from hunger.
+patch=1,EE,0088E3C4,extended,00000001
+
+[Max Respect]
+author=IRISHDEVELOPERDEV (custom, game's own max-respect cheat flag)
+description=[TESTED] Respect is always maxed.
+patch=1,EE,0088E3CF,extended,00000001
+
+[Max Stamina - Infinite Sprint]
+author=IRISHDEVELOPERDEV (custom, CStats float table, stat 22)
+description=[TESTED] Stamina stat held at 1000, so CJ can sprint, swim and cycle without tiring.
+patch=1,EE,20802E48,extended,447A0000
+
+[Max Vehicle Skills]
+author=IRISHDEVELOPERDEV (custom, CStats int table, stats 160/223/229/230)
+description=[TESTED] Driving, flying, bike and cycling skills held at max (1000).
+patch=1,EE,20802FE0,extended,000003E8
+patch=1,EE,2080309C,extended,000003E8
+patch=1,EE,208030B4,extended,000003E8
+patch=1,EE,208030B8,extended,000003E8
+
+[Max Weapon Skills - Hitman]
+author=IRISHDEVELOPERDEV (custom, CStats float table, stats 69-79)
+description=[TESTED] All weapon skills at Hitman level (1000). Pistols, sawn-off and Uzi/Tec9 become dual-wield.
+patch=1,EE,20802F04,extended,447A0000
+patch=1,EE,20802F08,extended,447A0000
+patch=1,EE,20802F0C,extended,447A0000
+patch=1,EE,20802F10,extended,447A0000
+patch=1,EE,20802F14,extended,447A0000
+patch=1,EE,20802F18,extended,447A0000
+patch=1,EE,20802F1C,extended,447A0000
+patch=1,EE,20802F20,extended,447A0000
+patch=1,EE,20802F24,extended,447A0000
+patch=1,EE,20802F28,extended,447A0000
+patch=1,EE,20802F2C,extended,447A0000
+
+[Auto Weapons - Full Set]
+author=IRISHDEVELOPERDEV (custom, game's own CCheat::WeaponCheat2 0x59E070 + WeaponCheat3 0x59E350, called from a hook on the CCheat::DoCheats call in CGame::Process at 0x2434CC)
+description=[TESTED] [CODE CAVE + HOOK] Gives CJ a full weapon set automatically: chainsaw, satchel charges, silenced pistol, SPAS-12, MP5, M4, sniper rifle, heat-seeking RPG and fire extinguisher. Checks every 3 seconds and re-gives them whenever CJ's heavy-weapon slot is empty (new game, after Wasted/Busted, or a save without one). No buttons needed. Uses a code cave at 0x000FF000-0x000FF06C, counter at 0x000FE000, hook at 0x002434CC.
+patch=1,EE,200FF000,extended,27BDFFF0
+patch=1,EE,200FF004,extended,FFBF0000
+patch=1,EE,200FF008,extended,0C1675F8
+patch=1,EE,200FF00C,extended,00000000
+patch=1,EE,200FF010,extended,3C080010
+patch=1,EE,200FF014,extended,8D09E000
+patch=1,EE,200FF018,extended,25290001
+patch=1,EE,200FF01C,extended,2D210096
+patch=1,EE,200FF020,extended,1420000F
+patch=1,EE,200FF024,extended,00000000
+patch=1,EE,200FF028,extended,AD00E000
+patch=1,EE,200FF02C,extended,3C020071
+patch=1,EE,200FF030,extended,8C44A260
+patch=1,EE,200FF034,extended,1080000B
+patch=1,EE,200FF038,extended,00000000
+patch=1,EE,200FF03C,extended,8C8306A4
+patch=1,EE,200FF040,extended,14600008
+patch=1,EE,200FF044,extended,00000000
+patch=1,EE,200FF048,extended,0C16781C
+patch=1,EE,200FF04C,extended,00000000
+patch=1,EE,200FF050,extended,0C1678D4
+patch=1,EE,200FF054,extended,00000000
+patch=1,EE,200FF058,extended,10000002
+patch=1,EE,200FF05C,extended,00000000
+patch=1,EE,200FF060,extended,AD09E000
+patch=1,EE,200FF064,extended,DFBF0000
+patch=1,EE,200FF068,extended,03E00008
+patch=1,EE,200FF06C,extended,27BD0010
+patch=1,EE,202434CC,extended,0C03FC00

@@ -1,0 +1,2509 @@
+gametitle=Bully (NTSC-U) [SLUS-21269] 28703748
+// PCSX2 cheats for the USA disc only (CRC 28703748).
+// Source: CheatDevicePS2 code list, converted to pnach by xs1l3n7x. Multi-line codes that the conversion split into several
+//   same-named sections are merged back into one section here (patch lines unchanged, same order).
+// [JOKER] = button-activated. [MASTER CODE] = Cheat Device hook, not needed in PCSX2; leave it off.
+// Most of this file is Stats-screen counters (Max/No pairs); never enable a Max and a No version of the same stat together.
+// Status: [UNTESTED] = not yet confirmed in game. Enable one cheat at a time when trying them.
+
+[Phoenix Key]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [MASTER CODE - leave OFF] CodeBreaker/Cheat Device hook code (type 9). PCSX2 does not need it; not a gameplay cheat.
+patch=1,EE,901216F8,extended,00832021
+
+[Infinite Health]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[TESTED] Health stays at 200. Direct write.
+patch=1,EE,21C68AC8,extended,43480000
+
+[Infinite Health (Alternate)]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [CODE CAVE + HOOK] Health refilled by a hook at 0x0041F568 (cave 0x000C0220). Do not combine with Infinite Health.
+patch=1,EE,200C0220,extended,3C014348
+patch=1,EE,200C0224,extended,AE8119F4
+patch=1,EE,200C0228,extended,AE811A08
+patch=1,EE,200C022C,extended,03E00008
+patch=1,EE,200C0230,extended,C68219F4
+patch=1,EE,2041F568,extended,0C030088
+
+[Max Pocket Change]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[TESTED] Jimmy's pocket money stays at $999,999.99. Direct write.
+patch=1,EE,21C68AB0,extended,05F5E0FF
+
+[Max Pocket Change (Alternate)]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [CODE CAVE + HOOK] Money set by a hook at 0x0042ED58 (cave 0x000C0240). Do not combine with Max Pocket Change.
+patch=1,EE,200C0240,extended,3C0205F5
+patch=1,EE,200C0244,extended,3442E0FF
+patch=1,EE,200C0248,extended,03E00008
+patch=1,EE,200C024C,extended,AC2219F0
+patch=1,EE,2042ED50,extended,8C418520
+patch=1,EE,2042ED58,extended,0C030090
+
+[Always Low Trouble Meter]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[TESTED] Trouble meter stays at zero.
+patch=1,EE,21C68B50,extended,00000000
+
+[Press L1+L2 For Low Trouble Meter]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+L2 to clear the trouble meter.
+patch=1,EE,D06D5DC2,extended,0000FAFF
+patch=1,EE,21C68B50,extended,00000000
+
+[Press R1+R2 For High Trouble Meter]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press R1+R2 to fill the trouble meter.
+patch=1,EE,D06D5DC2,extended,0000F5FF
+patch=1,EE,21C68B50,extended,0001869F
+
+[Press R1+Select For Top Of The Hour]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[TESTED] [JOKER] Press R1+Select to set the clock minutes to :00.
+patch=1,EE,D06D5DC2,extended,0000F7FE
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press R2+Select For End Of The Hour]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[TESTED] [JOKER] Press R2+Select to set the clock minutes to :59.
+patch=1,EE,D06D5DC2,extended,0000FDFE
+patch=1,EE,205E4EBC,extended,0000003B
+
+[Press L1+Select For 12:00 A.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 12:00 A.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,00000000
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 1:00 A.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 1:00 A.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,00000001
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 2:00 A.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 2:00 A.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,00000002
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 3:00 A.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 3:00 A.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,00000003
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 4:00 A.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 4:00 A.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,00000004
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 5:00 A.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 5:00 A.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,00000005
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 6:00 A.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 6:00 A.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,00000006
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 7:00 A.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 7:00 A.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,00000007
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 8:00 A.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 8:00 A.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,00000008
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 9:00 A.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 9:00 A.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,00000009
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 10:00 A.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 10:00 A.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,0000000A
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 11:00 A.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 11:00 A.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,0000000B
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 12:00 P.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 12:00 P.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,0000000C
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 1:00 P.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 1:00 P.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,0000000D
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 2:00 P.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 2:00 P.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,0000000E
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 3:00 P.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 3:00 P.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,0000000F
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 4:00 P.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 4:00 P.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,00000010
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 5:00 P.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 5:00 P.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,00000011
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 6:00 P.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 6:00 P.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,00000012
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 7:00 P.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 7:00 P.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,00000013
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 8:00 P.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 8:00 P.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,00000014
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 9:00 P.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 9:00 P.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,00000015
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 10:00 P.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 10:00 P.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,00000016
+patch=1,EE,205E4EBC,extended,00000000
+
+[Press L1+Select For 11:00 P.M.]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] [JOKER] Press L1+Select to set the clock to 11:00 P.M. Do not enable more than one clock code.
+patch=1,EE,E002FBFE,extended,006D5DC2
+patch=1,EE,205E4EB8,extended,00000017
+patch=1,EE,205E4EBC,extended,00000000
+
+[Max Money Earned]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Earned" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7060,extended,05F5E0FF
+
+[No Money Earned]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Earned" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7060,extended,00000000
+
+[Max Room Trophies Unlocked]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Room Trophies Unlocked" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7064,extended,00000024
+
+[No Room Trophies Unlocked]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Room Trophies Unlocked" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7064,extended,00000000
+
+[Max Time Played]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Time Played" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7068,extended,FFFFFFFF
+
+[No Time Played]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Time Played" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7068,extended,00000000
+
+[Max Times Busted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Busted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C706C,extended,05F5E0FF
+
+[No Times Busted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Busted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C706C,extended,00000000
+
+[Max Times Passed Out]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Passed Out" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7070,extended,05F5E0FF
+
+[No Times Passed Out]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Passed Out" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7070,extended,00000000
+
+[Max Distance Travelled On Foot]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Distance Travelled On Foot" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7074,extended,4B189678
+
+[No Distance Travelled On Foot]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Distance Travelled On Foot" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7074,extended,00000000
+
+[Max Distance Travelled On Skateboard]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Distance Travelled On Skateboard" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7078,extended,4B189678
+
+[No Distance Travelled On Skateboard]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Distance Travelled On Skateboard" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7078,extended,00000000
+
+[Max Distance Travelled On Bike]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Distance Travelled On Bike" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C707C,extended,4B189678
+
+[No Distance Travelled On Bike]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Distance Travelled On Bike" to zero. Stats are saved to the memory card.
+patch=1,EE,206C707C,extended,00000000
+
+[Max Distance Travelled On Go Kart]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Distance Travelled On Go Kart" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7080,extended,4B189678
+
+[No Distance Travelled On Go Kart]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Distance Travelled On Go Kart" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7080,extended,00000000
+
+[Max Distance Travelled (unlabelled stat 0x006C7084)]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Distance Travelled (unlabelled stat 0x006C7084)" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7084,extended,4B189678
+
+[No Distance Travelled (unlabelled stat 0x006C7084)]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Distance Travelled (unlabelled stat 0x006C7084)" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7084,extended,00000000
+
+[Max Distance Travelled On Lawnmower]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Distance Travelled On Lawnmower" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7088,extended,4B189678
+
+[No Distance Travelled On Lawnmower]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Distance Travelled On Lawnmower" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7088,extended,00000000
+
+[Max Distance Swam]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Distance Swam" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C708C,extended,4B189678
+
+[No Distance Swam]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Distance Swam" to zero. Stats are saved to the memory card.
+patch=1,EE,206C708C,extended,00000000
+
+[Max Times Tattled On]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Tattled On" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7090,extended,05F5E0FF
+
+[No Times Tattled On]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Tattled On" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7090,extended,00000000
+
+[Max Times Slipped On Banana Skin]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Slipped On Banana Skin" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7094,extended,05F5E0FF
+
+[No Times Slipped On Banana Skin]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Slipped On Banana Skin" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7094,extended,00000000
+
+[Max Times Slipped On Marbles]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Slipped On Marbles" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7098,extended,05F5E0FF
+
+[No Times Slipped On Marbles]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Slipped On Marbles" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7098,extended,00000000
+
+[Max Mascot Dances Attempted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Mascot Dances Attempted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C709C,extended,05F5E0FF
+
+[No Mascot Dances Attempted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Mascot Dances Attempted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C709C,extended,00000000
+
+[Max Mascot Dances Completed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Mascot Dances Completed" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70A0,extended,05F5E0FF
+
+[No Mascot Dances Completed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Mascot Dances Completed" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70A0,extended,00000000
+
+[Max Hit By Car]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Hit By Car" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70A4,extended,05F5E0FF
+
+[No Hit By Car]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Hit By Car" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70A4,extended,00000000
+
+[Max Food Fights Started]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Food Fights Started" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70A8,extended,05F5E0FF
+
+[No Food Fights Started]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Food Fights Started" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70A8,extended,00000000
+
+[Max Snowball Fights Started]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Snowball Fights Started" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70AC,extended,05F5E0FF
+
+[No Snowball Fights Started]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Snowball Fights Started" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70AC,extended,00000000
+
+[Max Windows Broken]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Windows Broken" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70B0,extended,05F5E0FF
+
+[No Windows Broken]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Windows Broken" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70B0,extended,00000000
+
+[Max Plants Smashed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Plants Smashed" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70B4,extended,05F5E0FF
+
+[No Plants Smashed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Plants Smashed" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70B4,extended,00000000
+
+[Max Cars Egged]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Cars Egged" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70B8,extended,05F5E0FF
+
+[No Cars Egged]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Cars Egged" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70B8,extended,00000000
+
+[Max Fire Crackers In Toilets]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Fire Crackers In Toilets" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70BC,extended,05F5E0FF
+
+[No Fire Crackers In Toilets]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Fire Crackers In Toilets" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70BC,extended,00000000
+
+[Max Cars Damaged]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Cars Damaged" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70C0,extended,05F5E0FF
+
+[No Cars Damaged]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Cars Damaged" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70C0,extended,00000000
+
+[Max Trash Bins Smashed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Trash Bins Smashed" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70C8,extended,05F5E0FF
+
+[No Trash Bins Smashed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Trash Bins Smashed" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70C8,extended,00000000
+
+[Max Crates Smashed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Crates Smashed" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70CC,extended,05F5E0FF
+
+[No Crates Smashed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Crates Smashed" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70CC,extended,00000000
+
+[Max Times Hidden]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Hidden" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70D0,extended,05F5E0FF
+
+[No Times Hidden]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Hidden" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70D0,extended,00000000
+
+[Max Times Using Toilet]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Using Toilet" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70D4,extended,05F5E0FF
+
+[No Times Using Toilet]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Using Toilet" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70D4,extended,00000000
+
+[Max Times Using Urinal]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Using Urinal" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70D8,extended,05F5E0FF
+
+[No Times Using Urinal]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Using Urinal" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70D8,extended,00000000
+
+[Max Fire Alarms Pulled]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Fire Alarms Pulled" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70DC,extended,05F5E0FF
+
+[No Fire Alarms Pulled]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Fire Alarms Pulled" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70DC,extended,00000000
+
+[Max Wedgies Given]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Wedgies Given" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70E0,extended,05F5E0FF
+
+[No Wedgies Given]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Wedgies Given" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70E0,extended,00000000
+
+[Max Swirlies Given]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Swirlies Given" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70E4,extended,05F5E0FF
+
+[No Swirlies Given]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Swirlies Given" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70E4,extended,00000000
+
+[Max People Stuffed In Lockers]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "People Stuffed In Lockers" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70E8,extended,05F5E0FF
+
+[No People Stuffed In Lockers]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "People Stuffed In Lockers" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70E8,extended,00000000
+
+[Max People Stuffed In Bins]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "People Stuffed In Bins" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70EC,extended,05F5E0FF
+
+[No People Stuffed In Bins]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "People Stuffed In Bins" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70EC,extended,00000000
+
+[Max Chocolates Found]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Chocolates Found" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70F0,extended,05F5E0FF
+
+[No Chocolates Found]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Chocolates Found" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70F0,extended,00000000
+
+[Max Chocolates Obtained]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Chocolates Obtained" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70F4,extended,05F5E0FF
+
+[No Chocolates Obtained]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Chocolates Obtained" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70F4,extended,00000000
+
+[Max Flowers Found]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Flowers Found" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70F8,extended,05F5E0FF
+
+[No Flowers Found]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Flowers Found" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70F8,extended,00000000
+
+[Max Flowers Obtained]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Flowers Obtained" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C70FC,extended,05F5E0FF
+
+[No Flowers Obtained]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Flowers Obtained" to zero. Stats are saved to the memory card.
+patch=1,EE,206C70FC,extended,00000000
+
+[Max Sodas Drank]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Sodas Drank" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7100,extended,05F5E0FF
+
+[No Sodas Drank]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Sodas Drank" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7100,extended,00000000
+
+[Max Frisbees Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Frisbees Thrown" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7104,extended,05F5E0FF
+
+[No Frisbees Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Frisbees Thrown" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7104,extended,00000000
+
+[Max Basketballs Dribbled]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Basketballs Dribbled" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7108,extended,05F5E0FF
+
+[No Basketballs Dribbled]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Basketballs Dribbled" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7108,extended,00000000
+
+[Max Soccer Balls Kicked]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Soccer Balls Kicked" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C710C,extended,05F5E0FF
+
+[No Soccer Balls Kicked]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Soccer Balls Kicked" to zero. Stats are saved to the memory card.
+patch=1,EE,206C710C,extended,00000000
+
+[Max Footballs Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Footballs Thrown" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7110,extended,05F5E0FF
+
+[No Footballs Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Footballs Thrown" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7110,extended,00000000
+
+[Max Facts Gained From World Globe]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Facts Gained From World Globe" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7114,extended,05F5E0FF
+
+[No Facts Gained From World Globe]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Facts Gained From World Globe" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7114,extended,00000000
+
+[Max Bikes Jacked]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bikes Jacked" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7118,extended,05F5E0FF
+
+[No Bikes Jacked]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bikes Jacked" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7118,extended,00000000
+
+[Max Times Crashed On Bike]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Crashed On Bike" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C711C,extended,05F5E0FF
+
+[No Times Crashed On Bike]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Crashed On Bike" to zero. Stats are saved to the memory card.
+patch=1,EE,206C711C,extended,00000000
+
+[Max Pushed Off Bike]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pushed Off Bike" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7120,extended,05F5E0FF
+
+[No Pushed Off Bike]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pushed Off Bike" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7120,extended,00000000
+
+[Max Wheelies]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Wheelies" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7124,extended,05F5E0FF
+
+[No Wheelies]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Wheelies" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7124,extended,00000000
+
+[Max Bike Garages Used]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bike Garages Used" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7130,extended,05F5E0FF
+
+[No Bike Garages Used]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bike Garages Used" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7130,extended,00000000
+
+[Max Carnival Races Raced]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Carnival Races Raced" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7138,extended,05F5E0FF
+
+[No Carnival Races Raced]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Carnival Races Raced" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7138,extended,00000000
+
+[Max Carnival Races Won]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Carnival Races Won" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C713C,extended,05F5E0FF
+
+[No Carnival Races Won]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Carnival Races Won" to zero. Stats are saved to the memory card.
+patch=1,EE,206C713C,extended,00000000
+
+[Max Street Races Raced]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Street Races Raced" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7140,extended,05F5E0FF
+
+[No Street Races Raced]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Street Races Raced" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7140,extended,00000000
+
+[Max Street Races Won]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Street Races Won" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7144,extended,05F5E0FF
+
+[No Street Races Won]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Street Races Won" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7144,extended,00000000
+
+[Max Money Spent On Bikes]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent On Bikes" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7148,extended,05F5E0FF
+
+[No Money Spent On Bikes]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent On Bikes" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7148,extended,00000000
+
+[Max Money Spent In The General Store]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent In The General Store" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C714C,extended,05F5E0FF
+
+[No Money Spent In The General Store]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent In The General Store" to zero. Stats are saved to the memory card.
+patch=1,EE,206C714C,extended,00000000
+
+[Max Money Spent On Clothing]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent On Clothing" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7150,extended,05F5E0FF
+
+[No Money Spent On Clothing]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent On Clothing" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7150,extended,00000000
+
+[Max Money Spent In The Comic Store]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent In The Comic Store" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7154,extended,05F5E0FF
+
+[No Money Spent In The Comic Store]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent In The Comic Store" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7154,extended,00000000
+
+[Max Money Spent On Haircuts]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent On Haircuts" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7158,extended,05F5E0FF
+
+[No Money Spent On Haircuts]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent On Haircuts" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7158,extended,00000000
+
+[Max Money Spent On Tattoos]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent On Tattoos" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C715C,extended,05F5E0FF
+
+[No Money Spent On Tattoos]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent On Tattoos" to zero. Stats are saved to the memory card.
+patch=1,EE,206C715C,extended,00000000
+
+[Max Items Purchased]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Items Purchased" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7160,extended,05F5E0FF
+
+[No Items Purchased]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Items Purchased" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7160,extended,00000000
+
+[Max Bikes Purchased]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bikes Purchased" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7164,extended,05F5E0FF
+
+[No Bikes Purchased]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bikes Purchased" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7164,extended,00000000
+
+[Max Clothing Items Purchased]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Clothing Items Purchased" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7168,extended,05F5E0FF
+
+[No Clothing Items Purchased]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Clothing Items Purchased" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7168,extended,00000000
+
+[Max Haircuts Purchased]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Haircuts Purchased" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C716C,extended,05F5E0FF
+
+[No Haircuts Purchased]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Haircuts Purchased" to zero. Stats are saved to the memory card.
+patch=1,EE,206C716C,extended,00000000
+
+[Max Tattoos Purchased]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Tattoos Purchased" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7170,extended,05F5E0FF
+
+[No Tattoos Purchased]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Tattoos Purchased" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7170,extended,00000000
+
+[Max Water Balloons Made]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Water Balloons Made" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7174,extended,05F5E0FF
+
+[No Water Balloons Made]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Water Balloons Made" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7174,extended,00000000
+
+[Max Water Balloons Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Water Balloons Thrown" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7178,extended,05F5E0FF
+
+[No Water Balloons Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Water Balloons Thrown" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7178,extended,00000000
+
+[Max Water Balloons Hit]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Water Balloons Hit" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C717C,extended,05F5E0FF
+
+[No Water Balloons Hit]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Water Balloons Hit" to zero. Stats are saved to the memory card.
+patch=1,EE,206C717C,extended,00000000
+
+[Max Itching Powder Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Itching Powder Thrown" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7180,extended,05F5E0FF
+
+[No Itching Powder Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Itching Powder Thrown" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7180,extended,00000000
+
+[Max Itching Powder Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Itching Powder Hits" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7184,extended,05F5E0FF
+
+[No Itching Powder Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Itching Powder Hits" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7184,extended,00000000
+
+[Max Stink Bomb Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Stink Bomb Thrown" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7188,extended,05F5E0FF
+
+[No Stink Bomb Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Stink Bomb Thrown" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7188,extended,00000000
+
+[Max Stink Bomb Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Stink Bomb Hits" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C718C,extended,05F5E0FF
+
+[No Stink Bomb Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Stink Bomb Hits" to zero. Stats are saved to the memory card.
+patch=1,EE,206C718C,extended,00000000
+
+[Max Kick Me Signs Used]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Kick Me Signs Used" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7190,extended,05F5E0FF
+
+[No Kick Me Signs Used]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Kick Me Signs Used" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7190,extended,00000000
+
+[Max Marbles Dropped]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Marbles Dropped" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7194,extended,05F5E0FF
+
+[No Marbles Dropped]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Marbles Dropped" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7194,extended,00000000
+
+[Max People Tripped With Marbles]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "People Tripped With Marbles" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7198,extended,05F5E0FF
+
+[No People Tripped With Marbles]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "People Tripped With Marbles" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7198,extended,00000000
+
+[Max Volcano 4000s Used]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Volcano 4000s Used" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71A8,extended,05F5E0FF
+
+[No Volcano 4000s Used]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Volcano 4000s Used" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71A8,extended,00000000
+
+[Max People Knocked Down By Volcano 4000]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "People Knocked Down By Volcano 4000" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71AC,extended,05F5E0FF
+
+[No People Knocked Down By Volcano 4000]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "People Knocked Down By Volcano 4000" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71AC,extended,00000000
+
+[Max Sodas Bought]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Sodas Bought" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7368,extended,05F5E0FF
+
+[No Sodas Bought]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Sodas Bought" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7368,extended,00000000
+
+[Max Times Knocked Out]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Knocked Out" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7134,extended,05F5E0FF
+
+[No Times Knocked Out]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Knocked Out" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7134,extended,00000000
+
+[Max Nerds Knocked Out]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Nerds Knocked Out" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71B0,extended,05F5E0FF
+
+[No Nerds Knocked Out]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Nerds Knocked Out" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71B0,extended,00000000
+
+[Max Knocked Out By Nerds]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Knocked Out By Nerds" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71B4,extended,05F5E0FF
+
+[No Knocked Out By Nerds]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Knocked Out By Nerds" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71B4,extended,00000000
+
+[Max Bullies Knocked Out]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bullies Knocked Out" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71B8,extended,05F5E0FF
+
+[No Bullies Knocked Out]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bullies Knocked Out" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71B8,extended,00000000
+
+[Max Knocked Out By Bullies]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Knocked Out By Bullies" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71BC,extended,05F5E0FF
+
+[No Knocked Out By Bullies]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Knocked Out By Bullies" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71BC,extended,00000000
+
+[Max Preps Knocked Out]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Preps Knocked Out" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71C0,extended,05F5E0FF
+
+[No Preps Knocked Out]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Preps Knocked Out" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71C0,extended,00000000
+
+[Max Knocked Out By Prep]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Knocked Out By Prep" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71C4,extended,05F5E0FF
+
+[No Knocked Out By Prep]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Knocked Out By Prep" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71C4,extended,00000000
+
+[Max Greasers Knocked Out]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Greasers Knocked Out" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71C8,extended,05F5E0FF
+
+[No Greasers Knocked Out]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Greasers Knocked Out" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71C8,extended,00000000
+
+[Max Knocked Out By Greaser]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Knocked Out By Greaser" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71CC,extended,05F5E0FF
+
+[No Knocked Out By Greaser]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Knocked Out By Greaser" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71CC,extended,00000000
+
+[Max Jocks Knocked Out]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Jocks Knocked Out" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71D0,extended,05F5E0FF
+
+[No Jocks Knocked Out]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Jocks Knocked Out" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71D0,extended,00000000
+
+[Max Knocked Out By Jock]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Knocked Out By Jock" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71D4,extended,05F5E0FF
+
+[No Knocked Out By Jock]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Knocked Out By Jock" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71D4,extended,00000000
+
+[Max Townies Knocked Out]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Townies Knocked Out" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71D8,extended,05F5E0FF
+
+[No Townies Knocked Out]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Townies Knocked Out" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71D8,extended,00000000
+
+[Max Knocked Out By Townie]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Knocked Out By Townie" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71DC,extended,05F5E0FF
+
+[No Knocked Out By Townie]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Knocked Out By Townie" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71DC,extended,00000000
+
+[Max Rats Killed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Rats Killed" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71E0,extended,05F5E0FF
+
+[No Rats Killed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Rats Killed" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71E0,extended,00000000
+
+[Max Times Slapped]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Slapped" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71E4,extended,05F5E0FF
+
+[No Times Slapped]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Slapped" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71E4,extended,00000000
+
+[Max Times Kicked In The Nuts]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Kicked In The Nuts" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71E8,extended,05F5E0FF
+
+[No Times Kicked In The Nuts]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Kicked In The Nuts" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71E8,extended,00000000
+
+[Max Punches Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Punches Thrown" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71EC,extended,05F5E0FF
+
+[No Punches Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Punches Thrown" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71EC,extended,00000000
+
+[Max Punches Hit]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Punches Hit" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71F0,extended,05F5E0FF
+
+[No Punches Hit]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Punches Hit" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71F0,extended,00000000
+
+[Max Kicks Attempted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Kicks Attempted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71F4,extended,05F5E0FF
+
+[No Kicks Attempted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Kicks Attempted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71F4,extended,00000000
+
+[Max Kicks Landed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Kicks Landed" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71F8,extended,05F5E0FF
+
+[No Kicks Landed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Kicks Landed" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71F8,extended,00000000
+
+[Max Grapples Attempted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Grapples Attempted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C71FC,extended,05F5E0FF
+
+[No Grapples Attempted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Grapples Attempted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C71FC,extended,00000000
+
+[Max Successful Grapples]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Successful Grapples" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7200,extended,05F5E0FF
+
+[No Successful Grapples]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Successful Grapples" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7200,extended,00000000
+
+[Max Melee Weapon Attacks]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Melee Weapon Attacks" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7204,extended,05F5E0FF
+
+[No Melee Weapon Attacks]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Melee Weapon Attacks" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7204,extended,00000000
+
+[Max Melee Weapon Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Melee Weapon Hits" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7208,extended,05F5E0FF
+
+[No Melee Weapon Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Melee Weapon Hits" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7208,extended,00000000
+
+[Max Projectiles Fired]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Projectiles Fired" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C720C,extended,05F5E0FF
+
+[No Projectiles Fired]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Projectiles Fired" to zero. Stats are saved to the memory card.
+patch=1,EE,206C720C,extended,00000000
+
+[Max Projectiles Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Projectiles Hits" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7210,extended,05F5E0FF
+
+[No Projectiles Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Projectiles Hits" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7210,extended,00000000
+
+[Max Fire Crackers Collected]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Fire Crackers Collected" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7214,extended,05F5E0FF
+
+[No Fire Crackers Collected]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Fire Crackers Collected" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7214,extended,00000000
+
+[Max Fire Crackers Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Fire Crackers Thrown" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7218,extended,05F5E0FF
+
+[No Fire Crackers Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Fire Crackers Thrown" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7218,extended,00000000
+
+[Max Fire Cracker Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Fire Cracker Hits" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C721C,extended,05F5E0FF
+
+[No Fire Cracker Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Fire Cracker Hits" to zero. Stats are saved to the memory card.
+patch=1,EE,206C721C,extended,00000000
+
+[Max Spuds Collected]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Spuds Collected" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7220,extended,05F5E0FF
+
+[No Spuds Collected]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Spuds Collected" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7220,extended,00000000
+
+[Max Spud Gun Fired]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Spud Gun Fired" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7224,extended,05F5E0FF
+
+[No Spud Gun Fired]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Spud Gun Fired" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7224,extended,00000000
+
+[Max Spud Gun Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Spud Gun Hits" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7228,extended,05F5E0FF
+
+[No Spud Gun Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Spud Gun Hits" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7228,extended,00000000
+
+[Max Eggs Collected]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Eggs Collected" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C722C,extended,05F5E0FF
+
+[No Eggs Collected]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Eggs Collected" to zero. Stats are saved to the memory card.
+patch=1,EE,206C722C,extended,00000000
+
+[Max Eggs Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Eggs Thrown" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7230,extended,05F5E0FF
+
+[No Eggs Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Eggs Thrown" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7230,extended,00000000
+
+[Max Eggs Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Eggs Hits" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7234,extended,05F5E0FF
+
+[No Eggs Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Eggs Hits" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7234,extended,00000000
+
+[Max Bottle Rockets Collected]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bottle Rockets Collected" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7238,extended,05F5E0FF
+
+[No Bottle Rockets Collected]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bottle Rockets Collected" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7238,extended,00000000
+
+[Max Bottle Rockets Fired]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bottle Rockets Fired" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C723C,extended,05F5E0FF
+
+[No Bottle Rockets Fired]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bottle Rockets Fired" to zero. Stats are saved to the memory card.
+patch=1,EE,206C723C,extended,00000000
+
+[Max Bottle Rocket Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bottle Rocket Hits" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7240,extended,05F5E0FF
+
+[No Bottle Rocket Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bottle Rocket Hits" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7240,extended,00000000
+
+[Max Slingshot Fired]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Slingshot Fired" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7244,extended,05F5E0FF
+
+[No Slingshot Fired]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Slingshot Fired" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7244,extended,00000000
+
+[Max Slingshot Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Slingshot Hits" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7248,extended,05F5E0FF
+
+[No Slingshot Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Slingshot Hits" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7248,extended,00000000
+
+[Max Super Slingshot Fired]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Super Slingshot Fired" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C724C,extended,05F5E0FF
+
+[No Super Slingshot Fired]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Super Slingshot Fired" to zero. Stats are saved to the memory card.
+patch=1,EE,206C724C,extended,00000000
+
+[Max Super Slingshot Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Super Slingshot Hits" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7250,extended,05F5E0FF
+
+[No Super Slingshot Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Super Slingshot Hits" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7250,extended,00000000
+
+[Max Snowballs Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Snowballs Thrown" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7254,extended,05F5E0FF
+
+[No Snowballs Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Snowballs Thrown" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7254,extended,00000000
+
+[Max Snowball Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Snowball Hits" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7258,extended,05F5E0FF
+
+[No Snowball Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Snowball Hits" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7258,extended,00000000
+
+[Max Food Items Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Food Items Thrown" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C725C,extended,05F5E0FF
+
+[No Food Items Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Food Items Thrown" to zero. Stats are saved to the memory card.
+patch=1,EE,206C725C,extended,00000000
+
+[Max Food Item Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Food Item Hits" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7260,extended,05F5E0FF
+
+[No Food Item Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Food Item Hits" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7260,extended,00000000
+
+[Max People Knocked Out]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "People Knocked Out" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7378,extended,05F5E0FF
+
+[No People Knocked Out]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "People Knocked Out" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7378,extended,00000000
+
+[Max Kisses Received]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Kisses Received" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7264,extended,05F5E0FF
+
+[No Kisses Received]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Kisses Received" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7264,extended,00000000
+
+[Max Bottoms Pinched]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bottoms Pinched" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7268,extended,05F5E0FF
+
+[No Bottoms Pinched]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bottoms Pinched" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7268,extended,00000000
+
+[Max Gifts Given To People]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Gifts Given To People" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C726C,extended,05F5E0FF
+
+[No Gifts Given To People]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Gifts Given To People" to zero. Stats are saved to the memory card.
+patch=1,EE,206C726C,extended,00000000
+
+[Max Successful Authority Apologies]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Successful Authority Apologies" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7274,extended,05F5E0FF
+
+[No Successful Authority Apologies]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Successful Authority Apologies" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7274,extended,00000000
+
+[Max Nerds Greeted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Nerds Greeted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7278,extended,05F5E0FF
+
+[No Nerds Greeted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Nerds Greeted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7278,extended,00000000
+
+[Max Nerds Taunted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Nerds Taunted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C727C,extended,05F5E0FF
+
+[No Nerds Taunted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Nerds Taunted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C727C,extended,00000000
+
+[Max Bullies Greeted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bullies Greeted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7280,extended,05F5E0FF
+
+[No Bullies Greeted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bullies Greeted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7280,extended,00000000
+
+[Max Bullies Taunted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bullies Taunted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7284,extended,05F5E0FF
+
+[No Bullies Taunted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Bullies Taunted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7284,extended,00000000
+
+[Max Preps Greeted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Preps Greeted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7288,extended,05F5E0FF
+
+[No Preps Greeted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Preps Greeted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7288,extended,00000000
+
+[Max Preps Taunted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Preps Taunted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C728C,extended,05F5E0FF
+
+[No Preps Taunted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Preps Taunted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C728C,extended,00000000
+
+[Max Greasers Greeted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Greasers Greeted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7290,extended,05F5E0FF
+
+[No Greasers Greeted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Greasers Greeted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7290,extended,00000000
+
+[Max Greasers Taunted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Greasers Taunted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7294,extended,05F5E0FF
+
+[No Greasers Taunted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Greasers Taunted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7294,extended,00000000
+
+[Max Jocks Greeted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Jocks Greeted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7298,extended,05F5E0FF
+
+[No Jocks Greeted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Jocks Greeted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7298,extended,00000000
+
+[Max Jocks Taunted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Jocks Taunted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C729C,extended,05F5E0FF
+
+[No Jocks Taunted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Jocks Taunted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C729C,extended,00000000
+
+[Max Townies Greeted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Townies Greeted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72A0,extended,05F5E0FF
+
+[No Townies Greeted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Townies Greeted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72A0,extended,00000000
+
+[Max Townies Taunted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Townies Taunted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72A4,extended,05F5E0FF
+
+[No Townies Taunted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Townies Taunted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72A4,extended,00000000
+
+[Max Teachers Greeted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Teachers Greeted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72A8,extended,05F5E0FF
+
+[No Teachers Greeted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Teachers Greeted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72A8,extended,00000000
+
+[Max Teachers Taunted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Teachers Taunted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72AC,extended,05F5E0FF
+
+[No Teachers Taunted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Teachers Taunted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72AC,extended,00000000
+
+[Max Prefects Greeted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Prefects Greeted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72B0,extended,05F5E0FF
+
+[No Prefects Greeted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Prefects Greeted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72B0,extended,00000000
+
+[Max Prefects Taunted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Prefects Taunted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72B4,extended,05F5E0FF
+
+[No Prefects Taunted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Prefects Taunted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72B4,extended,00000000
+
+[Max Cops Greeted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Cops Greeted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72B8,extended,05F5E0FF
+
+[No Cops Greeted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Cops Greeted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72B8,extended,00000000
+
+[Max Cops Taunted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Cops Taunted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72BC,extended,05F5E0FF
+
+[No Cops Taunted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Cops Taunted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72BC,extended,00000000
+
+[Max Trouble Points Accumulated]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Trouble Points Accumulated" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72C8,extended,05F5E0FF
+
+[No Trouble Points Accumulated]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Trouble Points Accumulated" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72C8,extended,00000000
+
+[Max Called To The Principal's Office]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Called To The Principal's Office" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72CC,extended,05F5E0FF
+
+[No Called To The Principal's Office]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Called To The Principal's Office" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72CC,extended,00000000
+
+[Max Busted By Teacher]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Busted By Teacher" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72D8,extended,05F5E0FF
+
+[No Busted By Teacher]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Busted By Teacher" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72D8,extended,00000000
+
+[Max Escaped From Teacher]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Escaped From Teacher" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72DC,extended,05F5E0FF
+
+[No Escaped From Teacher]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Escaped From Teacher" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72DC,extended,00000000
+
+[Max Busted By Prefect]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Busted By Prefect" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72E0,extended,05F5E0FF
+
+[No Busted By Prefect]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Busted By Prefect" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72E0,extended,00000000
+
+[Max Escaped From Prefect]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Escaped From Prefect" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72E4,extended,05F5E0FF
+
+[No Escaped From Prefect]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Escaped From Prefect" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72E4,extended,00000000
+
+[Max Busted By Cop]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Busted By Cop" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72E8,extended,05F5E0FF
+
+[No Busted By Cop]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Busted By Cop" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72E8,extended,00000000
+
+[Max Escaped From Cop]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Escaped From Cop" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72EC,extended,05F5E0FF
+
+[No Escaped From Cop]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Escaped From Cop" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72EC,extended,00000000
+
+[Max Busted By Orderly]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Busted By Orderly" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72F0,extended,05F5E0FF
+
+[No Busted By Orderly]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Busted By Orderly" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72F0,extended,00000000
+
+[Max Escaped From Orderly]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Escaped From Orderly" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72F4,extended,05F5E0FF
+
+[No Escaped From Orderly]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Escaped From Orderly" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72F4,extended,00000000
+
+[Max Greetings]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Greetings" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7370,extended,05F5E0FF
+
+[No Greetings]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Greetings" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7370,extended,00000000
+
+[Max Taunts]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Taunts" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7374,extended,05F5E0FF
+
+[No Taunts]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Taunts" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7374,extended,00000000
+
+[Max Classes Skipped]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Classes Skipped" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72F8,extended,05F5E0FF
+
+[No Classes Skipped]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Classes Skipped" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72F8,extended,00000000
+
+[Max Papers Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Papers Thrown" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C72FC,extended,05F5E0FF
+
+[No Papers Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Papers Thrown" to zero. Stats are saved to the memory card.
+patch=1,EE,206C72FC,extended,00000000
+
+[Max Papers Delivered]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Papers Delivered" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7300,extended,05F5E0FF
+
+[No Papers Delivered]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Papers Delivered" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7300,extended,00000000
+
+[Max People Hit By Papers]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "People Hit By Papers" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7304,extended,05F5E0FF
+
+[No People Hit By Papers]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "People Hit By Papers" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7304,extended,00000000
+
+[Max Dogs Hit By Papers]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Dogs Hit By Papers" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7308,extended,05F5E0FF
+
+[No Dogs Hit By Papers]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Dogs Hit By Papers" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7308,extended,00000000
+
+[Max Money Earned On Paper Routes]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Earned On Paper Routes" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C730C,extended,05F5E0FF
+
+[No Money Earned On Paper Routes]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Earned On Paper Routes" to zero. Stats are saved to the memory card.
+patch=1,EE,206C730C,extended,00000000
+
+[Max Mowing Attempted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Mowing Attempted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7310,extended,05F5E0FF
+
+[No Mowing Attempted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Mowing Attempted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7310,extended,00000000
+
+[Max Mowing Completed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Mowing Completed" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7314,extended,05F5E0FF
+
+[No Mowing Completed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Mowing Completed" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7314,extended,00000000
+
+[Max Money Earned Mowing]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Earned Mowing" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C731C,extended,05F5E0FF
+
+[No Money Earned Mowing]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Earned Mowing" to zero. Stats are saved to the memory card.
+patch=1,EE,206C731C,extended,00000000
+
+[Max Snow Shoveling Attempted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Snow Shoveling Attempted" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7320,extended,05F5E0FF
+
+[No Snow Shoveling Attempted]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Snow Shoveling Attempted" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7320,extended,00000000
+
+[Max Snow Shoveling Completed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Snow Shoveling Completed" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7324,extended,05F5E0FF
+
+[No Snow Shoveling Completed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Snow Shoveling Completed" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7324,extended,00000000
+
+[Max Money Won In Bike Races]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Won In Bike Races" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C732C,extended,05F5E0FF
+
+[No Money Won In Bike Races]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Won In Bike Races" to zero. Stats are saved to the memory card.
+patch=1,EE,206C732C,extended,00000000
+
+[Max Boxing Matches Entered]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Boxing Matches Entered" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7330,extended,05F5E0FF
+
+[No Boxing Matches Entered]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Boxing Matches Entered" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7330,extended,00000000
+
+[Max Boxing Matches Won]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Boxing Matches Won" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7334,extended,05F5E0FF
+
+[No Boxing Matches Won]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Boxing Matches Won" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7334,extended,00000000
+
+[Max Money Won In Boxing]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Won In Boxing" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7338,extended,05F5E0FF
+
+[No Money Won In Boxing]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Won In Boxing" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7338,extended,00000000
+
+[Max Pictures Taken]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Taken" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C733C,extended,05F5E0FF
+
+[No Pictures Taken]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Taken" to zero. Stats are saved to the memory card.
+patch=1,EE,206C733C,extended,00000000
+
+[Max Pictures Of Nerds]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Of Nerds" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7344,extended,05F5E0FF
+
+[No Pictures Of Nerds]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Of Nerds" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7344,extended,00000000
+
+[Max Pictures Of Preps]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Of Preps" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7348,extended,05F5E0FF
+
+[No Pictures Of Preps]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Of Preps" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7348,extended,00000000
+
+[Max Pictures Of Greasers]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Of Greasers" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C734C,extended,05F5E0FF
+
+[No Pictures Of Greasers]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Of Greasers" to zero. Stats are saved to the memory card.
+patch=1,EE,206C734C,extended,00000000
+
+[Max Pictures Of Jocks]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Of Jocks" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7350,extended,05F5E0FF
+
+[No Pictures Of Jocks]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Of Jocks" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7350,extended,00000000
+
+[Max Pictures Of Townies]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Of Townies" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7354,extended,05F5E0FF
+
+[No Pictures Of Townies]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Of Townies" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7354,extended,00000000
+
+[Max Pictures Of Teachers]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Of Teachers" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7358,extended,05F5E0FF
+
+[No Pictures Of Teachers]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Of Teachers" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7358,extended,00000000
+
+[Max Pictures Of Prefects]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Of Prefects" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C735C,extended,05F5E0FF
+
+[No Pictures Of Prefects]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Of Prefects" to zero. Stats are saved to the memory card.
+patch=1,EE,206C735C,extended,00000000
+
+[Max Pictures Of Townsfolk]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Of Townsfolk" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7360,extended,05F5E0FF
+
+[No Pictures Of Townsfolk]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Of Townsfolk" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7360,extended,00000000
+
+[Max Pictures Of Bullies]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Of Bullies" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7364,extended,05F5E0FF
+
+[No Pictures Of Bullies]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Pictures Of Bullies" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7364,extended,00000000
+
+[Max Tags Sprayed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Tags Sprayed" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7380,extended,05F5E0FF
+
+[No Tags Sprayed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Tags Sprayed" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7380,extended,00000000
+
+[Max Nerd Tags Sprayed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Nerd Tags Sprayed" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7384,extended,05F5E0FF
+
+[No Nerd Tags Sprayed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Nerd Tags Sprayed" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7384,extended,00000000
+
+[Max Preppie Tags Sprayed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Preppie Tags Sprayed" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7388,extended,05F5E0FF
+
+[No Preppie Tags Sprayed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Preppie Tags Sprayed" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7388,extended,00000000
+
+[Max Greaser Tags Sprayed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Greaser Tags Sprayed" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C738C,extended,05F5E0FF
+
+[No Greaser Tags Sprayed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Greaser Tags Sprayed" to zero. Stats are saved to the memory card.
+patch=1,EE,206C738C,extended,00000000
+
+[Max Jock Tags Sprayed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Jock Tags Sprayed" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7390,extended,05F5E0FF
+
+[No Jock Tags Sprayed]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Jock Tags Sprayed" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7390,extended,00000000
+
+[Max Tagging In View Of Authority]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Tagging In View Of Authority" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7394,extended,05F5E0FF
+
+[No Tagging In View Of Authority]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Tagging In View Of Authority" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7394,extended,00000000
+
+[Max Attempted Lock Picks]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Attempted Lock Picks" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7398,extended,05F5E0FF
+
+[No Attempted Lock Picks]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Attempted Lock Picks" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7398,extended,00000000
+
+[Max Successful Lock Picks]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Successful Lock Picks" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C739C,extended,05F5E0FF
+
+[No Successful Lock Picks]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Successful Lock Picks" to zero. Stats are saved to the memory card.
+patch=1,EE,206C739C,extended,00000000
+
+[Max Items Taken From Lockers]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Items Taken From Lockers" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73A0,extended,05F5E0FF
+
+[No Items Taken From Lockers]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Items Taken From Lockers" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73A0,extended,00000000
+
+[Max Ferris Wheel Rides]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Ferris Wheel Rides" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C736C,extended,05F5E0FF
+
+[No Ferris Wheel Rides]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Ferris Wheel Rides" to zero. Stats are saved to the memory card.
+patch=1,EE,206C736C,extended,00000000
+
+[Max Times Knocked Down]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Knocked Down" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73A4,extended,05F5E0FF
+
+[No Times Knocked Down]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Times Knocked Down" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73A4,extended,00000000
+
+[Max Dodgeballs Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Dodgeballs Thrown" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73A8,extended,05F5E0FF
+
+[No Dodgeballs Thrown]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Dodgeballs Thrown" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73A8,extended,00000000
+
+[Max Successful Dodgeball Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Successful Dodgeball Hits" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73AC,extended,05F5E0FF
+
+[No Successful Dodgeball Hits]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Successful Dodgeball Hits" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73AC,extended,00000000
+
+[Max Keep-Ups Played]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Keep-Ups Played" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73B0,extended,05F5E0FF
+
+[No Keep-Ups Played]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Keep-Ups Played" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73B0,extended,00000000
+
+[Max Keep-Ups Won]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Keep-Ups Won" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73B4,extended,05F5E0FF
+
+[No Keep-Ups Won]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Keep-Ups Won" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73B4,extended,00000000
+
+[Max Penalty Shootout Played]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Penalty Shootout Played" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73B8,extended,05F5E0FF
+
+[No Penalty Shootout Played]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Penalty Shootout Played" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73B8,extended,00000000
+
+[Max Penalty Shootout Won]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Penalty Shootout Won" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73BC,extended,05F5E0FF
+
+[No Penalty Shootout Won]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Penalty Shootout Won" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73BC,extended,00000000
+
+[Max Money Earned On Errands]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Earned On Errands" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73C0,extended,05F5E0FF
+
+[No Money Earned On Errands]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Earned On Errands" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73C0,extended,00000000
+
+[Max ConSumo Games Played]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "ConSumo Games Played" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73C4,extended,05F5E0FF
+
+[No ConSumo Games Played]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "ConSumo Games Played" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73C4,extended,00000000
+
+[Max ConSumo High Score]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "ConSumo High Score" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73C8,extended,05F5E0FF
+
+[No ConSumo High Score]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "ConSumo High Score" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73C8,extended,00000000
+
+[Max Money Spent On ConSumo]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent On ConSumo" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73CC,extended,05F5E0FF
+
+[No Money Spent On ConSumo]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent On ConSumo" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73CC,extended,00000000
+
+[Max Monkey Fling Games Played]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Monkey Fling Games Played" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73D0,extended,05F5E0FF
+
+[No Monkey Fling Games Played]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Monkey Fling Games Played" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73D0,extended,00000000
+
+[Max Monkey Fling High Score]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Monkey Fling High Score" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73D4,extended,05F5E0FF
+
+[No Monkey Fling High Score]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Monkey Fling High Score" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73D4,extended,00000000
+
+[Max Money Spent On Monkey Fling]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent On Monkey Fling" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73D8,extended,05F5E0FF
+
+[No Money Spent On Monkey Fling]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent On Monkey Fling" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73D8,extended,00000000
+
+[Max Nut Shots Games Played]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Nut Shots Games Played" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73DC,extended,05F5E0FF
+
+[No Nut Shots Games Played]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Nut Shots Games Played" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73DC,extended,00000000
+
+[Max Nut Shots High Score]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Nut Shots High Score" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73E0,extended,05F5E0FF
+
+[No Nut Shots High Score]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Nut Shots High Score" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73E0,extended,00000000
+
+[Max Money Spent On Nut Shots]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent On Nut Shots" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73E4,extended,05F5E0FF
+
+[No Money Spent On Nut Shots]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent On Nut Shots" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73E4,extended,00000000
+
+[Max FS Racer 2165 Games Played]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "FS Racer 2165 Games Played" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73E8,extended,05F5E0FF
+
+[No FS Racer 2165 Games Played]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "FS Racer 2165 Games Played" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73E8,extended,00000000
+
+[Max Money Spent On FS Racer 2165]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent On FS Racer 2165" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73EC,extended,05F5E0FF
+
+[No Money Spent On FS Racer 2165]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent On FS Racer 2165" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73EC,extended,00000000
+
+[Max FS Racer 3D Games Played]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "FS Racer 3D Games Played" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73F0,extended,05F5E0FF
+
+[No FS Racer 3D Games Played]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "FS Racer 3D Games Played" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73F0,extended,00000000
+
+[Max Money Spent On FS Racer 3D]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent On FS Racer 3D" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73F4,extended,05F5E0FF
+
+[No Money Spent On FS Racer 3D]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Money Spent On FS Racer 3D" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73F4,extended,00000000
+
+[Max Tickets Collected]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[TESTED] Sets the Stats-screen counter "Tickets Collected" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73F8,extended,05F5E0FF
+
+[No Tickets Collected]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Tickets Collected" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73F8,extended,00000000
+
+[Max Tickets Used]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Tickets Used" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C73FC,extended,05F5E0FF
+
+[No Tickets Used]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Tickets Used" to zero. Stats are saved to the memory card.
+patch=1,EE,206C73FC,extended,00000000
+
+[Max Items Bought Using Tickets]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Items Bought Using Tickets" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7400,extended,05F5E0FF
+
+[No Items Bought Using Tickets]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Items Bought Using Tickets" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7400,extended,00000000
+
+[Max Baseball Toss Special Targets Hit]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Baseball Toss Special Targets Hit" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7404,extended,05F5E0FF
+
+[No Baseball Toss Special Targets Hit]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Baseball Toss Special Targets Hit" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7404,extended,00000000
+
+[Max Baseball Toss Umpires Hit]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Baseball Toss Umpires Hit" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7408,extended,05F5E0FF
+
+[No Baseball Toss Umpires Hit]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Baseball Toss Umpires Hit" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7408,extended,00000000
+
+[Max Baseball Toss Balls]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Baseball Toss Balls" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C740C,extended,05F5E0FF
+
+[No Baseball Toss Balls]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Baseball Toss Balls" to zero. Stats are saved to the memory card.
+patch=1,EE,206C740C,extended,00000000
+
+[Max Baseball Toss Strikes]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Baseball Toss Strikes" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7410,extended,05F5E0FF
+
+[No Baseball Toss Strikes]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Baseball Toss Strikes" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7410,extended,00000000
+
+[Max Shooting Gallery Shots Taken]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Shooting Gallery Shots Taken" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7414,extended,05F5E0FF
+
+[No Shooting Gallery Shots Taken]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Shooting Gallery Shots Taken" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7414,extended,00000000
+
+[Max Shooting Gallery Bottles Broken]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Shooting Gallery Bottles Broken" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7418,extended,05F5E0FF
+
+[No Shooting Gallery Bottles Broken]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Shooting Gallery Bottles Broken" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7418,extended,00000000
+
+[Max Roller Coaster Rides]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Roller Coaster Rides" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C741C,extended,05F5E0FF
+
+[No Roller Coaster Rides]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Roller Coaster Rides" to zero. Stats are saved to the memory card.
+patch=1,EE,206C741C,extended,00000000
+
+[Max Octopus Rides]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Octopus Rides" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7420,extended,05F5E0FF
+
+[No Octopus Rides]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Octopus Rides" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7420,extended,00000000
+
+[Max Fortunes Read]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Fortunes Read" to its maximum. Stats are saved to the memory card.
+patch=1,EE,206C7424,extended,05F5E0FF
+
+[No Fortunes Read]
+author=CheatDevicePS2 (codes), xs1l3n7x (pnach conversion)
+description=[UNTESTED] Sets the Stats-screen counter "Fortunes Read" to zero. Stats are saved to the memory card.
+patch=1,EE,206C7424,extended,00000000
