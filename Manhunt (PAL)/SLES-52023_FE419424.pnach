@@ -1,0 +1,96 @@
+gametitle=Manhunt (Europe) [SLES-52023] v1.03 PAL
+// CRC FE419424. Every patch site was checked against SLES_520.23 from this disc on 2026-11-04.
+// Code credits: Codejunkies (Action Replay MAX, PAL, listed on GameHacking.org game/101937).
+// Raw PCSX2 form posted by GoggleBug on ps2-home.com (viewtopic t=4458), tested on a real PS2 (SCPH-39003).
+// Status: [TESTED] = confirmed in game memory on PCSX2 (Nov 4 2026). [UNTESTED] = patch confirmed applied, but the effect was not
+// seen yet: Infinite Health only takes effect when a level starts (not from a save state); the ammo/reload codes need firing
+// and reloading to confirm; First Person Mode did not change the camera in testing.
+// Conversion, checks and labels: IRISHDEVELOPERDEV. No master code is needed in PCSX2.
+
+[Infinite Health]
+author=Codejunkies (raw form by GoggleBug, ps2-home.com)
+description=[UNTESTED] SAFE. Turns on the game's own God Mode flag on Cash every frame. Patches the flag test at 0x457D28 in the built-in cheat handler.
+patch=1,EE,20457D28,extended,24030001
+
+[Infinite Stamina (Infinite Run)]
+author=Codejunkies (raw form by GoggleBug, ps2-home.com)
+description=[TESTED] SAFE. Writes 1.0 to the stamina value at 0x550FAC every frame. Uses two unused nop slots at 0x112F70; $at is already 0x550000 there.
+patch=1,EE,20112F70,extended,3C023F80
+patch=1,EE,20112F74,extended,AC220FAC
+
+[Infinite Ammo (No Clip Drain)]
+author=Codejunkies (raw form by GoggleBug, ps2-home.com)
+description=[UNTESTED] SAFE. Removes the clip decrement at 0x266808, so the clip never goes down. This is shared weapon code, so hunters also never run dry.
+patch=1,EE,20266808,extended,00000000
+
+[Infinite Reload]
+author=Codejunkies (raw form by GoggleBug, ps2-home.com)
+description=[UNTESTED] SAFE. Reloading refills the clip without taking from reserve ammo. Removes the subu at 0x267750.
+patch=1,EE,20267750,extended,00000000
+
+[Infinite-Max Ammo (99)]
+author=Codejunkies (raw form by GoggleBug, ps2-home.com)
+description=[UNTESTED] EXPERIMENTAL. Sets reserve and clip to 99 when the weapon ammo check runs (0x1B0728). Can go past normal clip sizes. Use either this or the two codes above, not both.
+patch=1,EE,201B0728,extended,24030063
+patch=1,EE,201B072C,extended,AE630098
+patch=1,EE,201B0730,extended,AE6300A0
+
+[Hunters Ignore You (Low AI)]
+author=Codejunkies (raw form by GoggleBug, ps2-home.com)
+description=[TESTED] EXPERIMENTAL. Sets the two AI perception flags (0x5ADC38, 0x5ADC3C) that the game's own unlockable cheats set. Hunters mostly fail to see or hear you. Scripted events can still trigger.
+patch=1,EE,205ADC38,extended,00000001
+patch=1,EE,205ADC3C,extended,00000001
+
+[Open All Levels]
+author=Codejunkies (raw form by GoggleBug, ps2-home.com)
+description=[TESTED] SAFE (progress). Sets the unlock byte (+0x54) in each of the 20 level records in the save block (0x5E1EB0, record stride 0xB0). Auto-save writes this to the memory card, so back up the card first. The source used 16-bit writes; byte writes are used here to leave +0x55 alone.
+patch=1,EE,005E1F04,byte,01
+patch=1,EE,005E1FB4,byte,01
+patch=1,EE,005E2064,byte,01
+patch=1,EE,005E2114,byte,01
+patch=1,EE,005E21C4,byte,01
+patch=1,EE,005E2274,byte,01
+patch=1,EE,005E2324,byte,01
+patch=1,EE,005E23D4,byte,01
+patch=1,EE,005E2484,byte,01
+patch=1,EE,005E2534,byte,01
+patch=1,EE,005E25E4,byte,01
+patch=1,EE,005E2694,byte,01
+patch=1,EE,005E2744,byte,01
+patch=1,EE,005E27F4,byte,01
+patch=1,EE,005E28A4,byte,01
+patch=1,EE,005E2954,byte,01
+patch=1,EE,005E2A04,byte,01
+patch=1,EE,005E2AB4,byte,01
+patch=1,EE,005E2B64,byte,01
+patch=1,EE,005E2C14,byte,01
+
+[All Levels Max Stars]
+author=Codejunkies (raw form by GoggleBug, ps2-home.com)
+description=[TESTED] EXPERIMENTAL (progress). Sets a 5-star rating (16-bit, record +0x58) on all 20 levels, which unlocks the bonus features and cheats menu. The +0x58 field could not be traced in code. Auto-save writes this to the memory card, so back up first.
+patch=1,EE,105E1F08,extended,00000005
+patch=1,EE,105E1FB8,extended,00000005
+patch=1,EE,105E2068,extended,00000005
+patch=1,EE,105E2118,extended,00000005
+patch=1,EE,105E21C8,extended,00000005
+patch=1,EE,105E2278,extended,00000005
+patch=1,EE,105E2328,extended,00000005
+patch=1,EE,105E23D8,extended,00000005
+patch=1,EE,105E2488,extended,00000005
+patch=1,EE,105E2538,extended,00000005
+patch=1,EE,105E25E8,extended,00000005
+patch=1,EE,105E2698,extended,00000005
+patch=1,EE,105E2748,extended,00000005
+patch=1,EE,105E27F8,extended,00000005
+patch=1,EE,105E28A8,extended,00000005
+patch=1,EE,105E2958,extended,00000005
+patch=1,EE,105E2A08,extended,00000005
+patch=1,EE,105E2AB8,extended,00000005
+patch=1,EE,105E2B68,extended,00000005
+patch=1,EE,105E2C18,extended,00000005
+
+[First Person Mode]
+author=Codejunkies (raw form by GoggleBug, ps2-home.com)
+description=[UNTESTED] EXPERIMENTAL. Camera tweak from the same set: removes two branches in the camera code (0x330618, 0x33062C). May clip or look odd in cutscenes.
+patch=1,EE,20330618,extended,00000000
+patch=1,EE,2033062C,extended,00000000

@@ -1,0 +1,102 @@
+gametitle=Grand Theft Auto - Vice City (PAL-M5) (v3.00) SLES-51061 26954C46
+// For the European v3.00 disc only (ELF SLES_510.61, CRC 26954C46). Not for v1.50/v2.03 or NTSC.
+// Sources: GameHacking.org PAL list (https://gamehacking.org/game/101599) by CMX, luc-ita and RyTheHexer; custom code-cave cheats.
+// Every patch address was checked against the v3.00 ELF: the original instruction/data at each site is noted per cheat.
+// Status: [TESTED] = all 6 verified in game memory on PCSX2 (Nov 4 2026). Safe = simple patch or game flag. Experimental = code cave + hook, test on its own first.
+
+[Infinite Health and Armour]
+author=IRISHDEVELOPERDEV (custom cave; hook site from RyTheHexer's GameHacking code, rewritten for v3.00)
+description=[TESTED] [SAFE - code cave] Keeps the player's health and armour at 100, refilled every frame by the HUD. Player only.
+// Hook 0x002DAEA4/A8 in CHud::Draw: orig 46000024 cvt.w.s $f0,$f0 / 44020000 mfc1 $v0,$f0, right after lwc1 $f0,0x368($v0) (player health).
+//   -> jal 0x000FFE00 / nop. Cave writes 100.0 to ped+0x368 (health) and +0x36C (armour), then redoes cvt.w.s/mfc1 so the HUD gets the new value.
+// (RyTheHexer's original listing writes all four cave words to one address and drops the cvt/mfc1, so it was not used as-is.)
+patch=1,EE,200FFE00,extended,3C0142C8
+patch=1,EE,200FFE04,extended,AC410368
+patch=1,EE,200FFE08,extended,AC41036C
+patch=1,EE,200FFE0C,extended,44810000
+patch=1,EE,200FFE10,extended,00000000
+patch=1,EE,200FFE14,extended,46000024
+patch=1,EE,200FFE18,extended,03E00008
+patch=1,EE,200FFE1C,extended,44020000
+patch=1,EE,202DAEA4,extended,0C03FF80
+patch=1,EE,202DAEA8,extended,00000000
+
+[Infinite Ammo (on foot and in vehicles)]
+author=CMX (GameHacking.org, PAL)
+description=[TESTED] [SAFE] Ammo and clip never go down, on foot and in vehicles (drive-by).
+// v3.00 sites: each is "addiu $v0,$v0,-1 ; sw $v0,8/0xC($s1)" in CWeapon::Fire; the store is replaced with nop.
+// 0x00158D8C orig AE220008, 0x00158DF4 orig AE22000C (on foot); 0x00158620 orig AE220008, 0x00158684 orig AE22000C (in car).
+patch=1,EE,20158D8C,extended,00000000
+patch=1,EE,20158DF4,extended,00000000
+patch=1,EE,20158620,extended,00000000
+patch=1,EE,20158684,extended,00000000
+
+[Max Money]
+author=CMX (GameHacking.org, PAL)
+description=[TESTED] [SAFE] Money and displayed money held at $99,999,999. Saved to the memory card.
+// CWorld::Players[0] is at 0x005D25C0 (FindPlayerPed 0x00290830); money +0x9C = 0x005D265C (31 code refs), display money 0x005D2660 (HUD 0x002DA59C).
+patch=1,EE,205D265C,extended,05F5E0FF
+patch=1,EE,205D2660,extended,05F5E0FF
+
+[Never Wanted]
+author=IRISHDEVELOPERDEV (custom, v3.00)
+description=[TESTED] [SAFE] Wanted level always stays at zero. Missions that need a wanted level may not work while it is on.
+// CWanted::UpdateWantedLevel 0x002A5940: chaos at +0 is clamped to the max (0x002A594C beqz 10200002, 0x002A5954 sw $a2,0($a0) AC860000).
+//   Patched to sw $zero,0($a0) / nop, so chaos is 0 and the function takes its "no wanted level" branch (0x002A5AD4).
+// (RyTheHexer's 202A594C 8C060000 only removes the clamp on this version, so it was replaced.)
+patch=1,EE,202A594C,extended,AC800000
+patch=1,EE,202A5954,extended,00000000
+
+[Infinite Sprint]
+author=luc-ita (GameHacking.org, PAL)
+description=[TESTED] [SAFE] Turns on the game's own infinite-sprint reward flag, so the player never gets tired.
+// Flag byte Players[0]+0x13C = 0x005D26FC; checked at 0x001D1268 (non-zero skips the stamina decrement at 0x001D1294).
+patch=1,EE,005D26FC,extended,00000001
+
+[Auto Weapon Sets (all three)]
+author=IRISHDEVELOPERDEV (custom, v3.00), uses the game's own weapon-set cheat functions
+description=[TESTED] [EXPERIMENTAL - code cave + hook] About every 5 s, if the heavy-weapon slot is empty, runs built-in weapon sets 1, 2 and 3 (ends with the minigun). Re-gives them after death/arrest. Shows the "cheat activated" message each time it fires.
+// Weapon set functions: 0x00280350 (set 1: brass knuckles, bat, molotovs, Colt, shotgun, Tec9, Ruger, sniper, flamethrower),
+//   0x00280180 (set 2), 0x0027FFB0 (set 3: chainsaw, grenades, Python, SPAS, MP5, M4, laser sniper, minigun); called from CPad::DoCheats 0x0027DF84/A8/CC.
+// Hook: 0x00275E50 in CGame::Process, orig 0C09F27C jal 0x0027C9F0 (CPad::DoCheats) -> jal 0x000FFE40. Cave tail-jumps to 0x0027C9F0, so DoCheats still runs.
+// Cave 0x000FFE40-0x000FFED8, counter at 0x000FFF80. Heavy slot = GetWeaponInfo(33 minigun) 0x00159AE0 ->+0x60; ped weapon slots at +0x41C, 0x18 each.
+patch=1,EE,200FFE40,extended,27BDFFE0
+patch=1,EE,200FFE44,extended,FFBF0000
+patch=1,EE,200FFE48,extended,FFB00008
+patch=1,EE,200FFE4C,extended,FFB10010
+patch=1,EE,200FFE50,extended,3C100010
+patch=1,EE,200FFE54,extended,8E08FF80
+patch=1,EE,200FFE58,extended,25080001
+patch=1,EE,200FFE5C,extended,2D090080
+patch=1,EE,200FFE60,extended,15200018
+patch=1,EE,200FFE64,extended,00000000
+patch=1,EE,200FFE68,extended,AE00FF80
+patch=1,EE,200FFE6C,extended,0C0A420C
+patch=1,EE,200FFE70,extended,00000000
+patch=1,EE,200FFE74,extended,10400014
+patch=1,EE,200FFE78,extended,0040882D
+patch=1,EE,200FFE7C,extended,0C0566B8
+patch=1,EE,200FFE80,extended,24040021
+patch=1,EE,200FFE84,extended,8C480060
+patch=1,EE,200FFE88,extended,00084840
+patch=1,EE,200FFE8C,extended,01284821
+patch=1,EE,200FFE90,extended,000948C0
+patch=1,EE,200FFE94,extended,02294821
+patch=1,EE,200FFE98,extended,8D29041C
+patch=1,EE,200FFE9C,extended,1520000A
+patch=1,EE,200FFEA0,extended,00000000
+patch=1,EE,200FFEA4,extended,0C0A00D4
+patch=1,EE,200FFEA8,extended,00000000
+patch=1,EE,200FFEAC,extended,0C0A0060
+patch=1,EE,200FFEB0,extended,00000000
+patch=1,EE,200FFEB4,extended,0C09FFEC
+patch=1,EE,200FFEB8,extended,00000000
+patch=1,EE,200FFEBC,extended,10000002
+patch=1,EE,200FFEC0,extended,00000000
+patch=1,EE,200FFEC4,extended,AE08FF80
+patch=1,EE,200FFEC8,extended,DFBF0000
+patch=1,EE,200FFECC,extended,DFB00008
+patch=1,EE,200FFED0,extended,DFB10010
+patch=1,EE,200FFED4,extended,0809F27C
+patch=1,EE,200FFED8,extended,27BD0020
+patch=1,EE,20275E50,extended,0C03FF90
