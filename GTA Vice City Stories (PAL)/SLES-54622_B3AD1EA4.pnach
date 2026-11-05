@@ -158,7 +158,7 @@ patch=1,EE,E0025688,extended,0050AE18
 patch=1,EE,6048771C,extended,00000000
 patch=1,EE,00020001,extended,000056AC
 
-[Auto Repair Current Car [UNTESTED]]
+[Auto Repair Current Car [TESTED]]
 author=IRISHDEVELOPERDEV (custom code cave, PAL SLES-54622)
 description=[UNTESTED] [CODE CAVE + HOOK] Only the vehicle you are in right now: when its health drops below full it is put back to 1000 (or the vehicle's own max if higher). Cars also get the game's own Pay'n'Spray repair (dents, doors, bonnet, lights, tyres, engine smoke). Bikes/boats get health only. Does nothing on foot or for a wrecked car. Code cave 0x000C3200-0x000C32CF; hook at 0x003BAD84 (empty per-frame stub in game loop, next to DoCheats).
 patch=1,EE,200C3200,extended,27BDFFE0
